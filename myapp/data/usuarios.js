@@ -39,46 +39,6 @@ let usuarios = {
                 constraseña: "camilasen12",
                 fotoDePerfil: ""
             },
-            {
-                
-                id: "6",
-                email: "jhondisa@yahoo.com",
-                documento: "76544433",
-                constraseña: "jhonnetflix",
-                fotoDePerfil: ""
-            },
-            {
-                
-                id: "7",
-                email: "hakim@att.net",
-                documento: "01020566",
-                constraseña: "hakiminorder",
-                fotoDePerfil: ""
-            },
-            {
-                
-                id: "8",
-                email: "ehood@yahoo.com.ar",
-                documento: "59360457",
-                constraseña: "dearhood",
-                fotoDePerfil: ""
-            },
-            {
-                
-                id: "9",
-                email: "jacintaflores@hotmail.com",
-                documento: "15678443",
-                constraseña: "jacinta61",
-                fotoDePerfil: ""
-            },
-            {
-                
-                id: "10",
-                email: "candelareyes@hotmail.com",
-                documento: "16745663",
-                constraseña: "reyesprimero",
-                fotoDePerfil: ""
-            }
         ]
     }
 
