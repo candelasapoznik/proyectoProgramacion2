@@ -6,7 +6,7 @@ var router = express.Router();
 let miPerfilController=require('../controllers/miPerfilController');
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST
-router.get('/', miPerfilController.index);
+router.get('/:id', miPerfilController.index);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;

@@ -6,7 +6,7 @@ var router = express.Router();
 let detalleUsuarioController=require('../controllers/detalleUsuarioController');
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST
-router.get('/', detalleUsuarioController.index);
+router.get('/:id', detalleUsuarioController.index);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
