@@ -1,6 +1,17 @@
 *{
     box-sizing: border-box;
+    color: black;
 }
 main{
     margin-bottom: 40px;
+}
+a{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.subtitle{
+    font-family: 'Courier New', Courier, monospace
 }
