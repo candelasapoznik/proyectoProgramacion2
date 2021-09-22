@@ -13,6 +13,7 @@ var loginRouter = require('./routes/login');
 var miPerfilRouter = require('./routes/miPerfil');
 var registracionRouter = require('./routes/registracion');
 var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
+var editarMiPerfilRouter = require('./routes/editarmiperfil');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/login', loginRouter);
 app.use('/miPerfil', miPerfilRouter);
 app.use('/registracion', registracionRouter);
 app.use('/resultadoBusqueda', resultadoBusquedaRouter);
+app.use('/editarMiPerfil', editarMiPerfilRouter);
 
 
 // catch 404 and forward to error handler
