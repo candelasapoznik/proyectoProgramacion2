@@ -1,4 +1,5 @@
 const comentarios = require('../data/comentarios');
+
 const postController={
     detailPost: function (req,res,next){
         for (let index = 0; index < comentarios.lista.length; index++) {
@@ -11,4 +12,4 @@ const postController={
         res.render('agregarPost',{})
         }
 };
-module.exports= postController;
+module.exports=postController;
