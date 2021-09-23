@@ -5,7 +5,7 @@ let usuarios = {
                 email: "moxfulder@yahoo.com",
                 documento: "73148074",
                 constraseña: "moxfulder",
-                fotoDePerfil: ""
+                fotoDePerfil: "/foto1.jpg"
             },
             {
                 
