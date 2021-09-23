@@ -1,6 +1,5 @@
 //CREO UNA VARIABLE PARA CONECTAR EL CONTROLADOR CON LOS DATOS
 const usuarios = require('../data/usuarios');
-let data=require('../data/usuarios');
 const userController={
     register: function (req,res,next){
         res.render('registracion',{})

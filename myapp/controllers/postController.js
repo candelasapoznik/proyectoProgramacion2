@@ -11,4 +11,4 @@ const postController={
         res.render('agregarPost',{})
         }
 };
-module.exports=detallePostController;
+module.exports= postController;
