@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html>
-    <%- include('./partials.head') %> 
+    <%- include('../partials/head') %> 
     <body>
-        <%- include('./partials.headerLogueado') %> 
+        <%- include('../partials/headerLogueado') %> 
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex">
-                    <h1>Formulario para agregar un post</h1>
+                    <h1 class="subtitulo">Formulario para agregar un post</h1>
                     <form action="/agregarPost" method="POST">
                         <div>
                             <label for="id">Id:</label>
@@ -27,6 +28,6 @@
                 </div>
             </div>
         </main>
-        <%- include('./partials.footer') %> 
+        <%- include('./partials/footer') %> 
     </body>
 </html>
