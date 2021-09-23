@@ -1,3 +1,4 @@
+const comentarios = require('../data/comentarios');
 const postController={
     detailPost: function (req,res,next){
         for (let index = 0; index < comentarios.lista.length; index++) {
@@ -7,11 +8,7 @@ const postController={
         }
     },
     agregarPost: function (req,res,next){
-        for (let index = 0; index < posteos.lista.length; index++) {
-            if (comentarios.lista[index].id==req.params.id) {
-                return res.render('agregarPost',{ agregarPost: comentarios.lista[index]})
-            }
+        res.render('agregarPost',{})
         }
-    }
 };
 module.exports=detallePostController;
