@@ -23,15 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/agregarPost', postRouter);
-app.use('/users/detalleUsuario', usersRouter);
-app.use('/detallePost', postRouter);
-app.use('/agregarPost', agregarPostRouter);
-app.use('/login', usersRouter);
-app.use('/miPerfil', usersRouter);
-app.use('/registracion', usersRouter);
-app.use('/resultadoBusqueda', resultadoBusquedaRouter);
-app.use('/editarMiPerfil', usersRouter);
+app.use('/posts', postRouter);
 
 
 // catch 404 and forward to error handler
