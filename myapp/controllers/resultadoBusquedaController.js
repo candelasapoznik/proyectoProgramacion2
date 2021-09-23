@@ -1,5 +1,5 @@
 const resultadoBusquedaController={
-    index: function (req,res,next){
+    results: function (req,res,next){
         res.render('resultadoBusqueda',{})
     }
 };

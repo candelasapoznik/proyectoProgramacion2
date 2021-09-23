@@ -6,14 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var agregarPostRouter = require('./routes/agregarPost');
-var detallePostRouter = require('./routes/detallePost');
-var detalleUsuarioRouter = require('./routes/detalleUsuario');
-var loginRouter = require('./routes/login');
-var miPerfilRouter = require('./routes/miPerfil');
-var registracionRouter = require('./routes/registracion');
+var postRouter = require('./routes/posts');
 var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
-var editarMiPerfilRouter = require('./routes/editarmiperfil');
 
 var app = express();
 
@@ -29,15 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/agregarPost', indexRouter);
-app.use('/users/detalleUsuario', detalleUsuarioRouter);
-app.use('/detallePost', detallePostRouter);
+app.use('/agregarPost', postRouter);
+app.use('/users/detalleUsuario', usersRouter);
+app.use('/detallePost', postRouter);
 app.use('/agregarPost', agregarPostRouter);
-app.use('/login', loginRouter);
-app.use('/miPerfil', miPerfilRouter);
-app.use('/registracion', registracionRouter);
+app.use('/login', usersRouter);
+app.use('/miPerfil', usersRouter);
+app.use('/registracion', usersRouter);
 app.use('/resultadoBusqueda', resultadoBusquedaRouter);
-app.use('/editarMiPerfil', editarMiPerfilRouter);
+app.use('/editarMiPerfil', usersRouter);
 
 
 // catch 404 and forward to error handler

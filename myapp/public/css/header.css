@@ -6,6 +6,8 @@
 header{
     height: 55px;
     padding-top: 10px;
+}
+.headerLogueado{
     background-color: rgb(255, 105, 105);
 }
 header section{

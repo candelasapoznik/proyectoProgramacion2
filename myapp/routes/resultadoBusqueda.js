@@ -6,7 +6,8 @@ var router = express.Router();
 let resultadoBusquedaController=require('../controllers/resultadoBusquedaController');
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST
-router.get('/', resultadoBusquedaController.index);
+//PARA RESULTADOS
+router.get('/', resultadoBusquedaController.results);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;

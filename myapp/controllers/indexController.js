@@ -1,6 +1,6 @@
 const editarMiPerfilController={
     index: function (req,res,next){
-        res.render('editarMiPerfil',{})
+        res.render('index',{})
     }
 };
 module.exports=editarMiPerfilController;
