@@ -5,28 +5,32 @@
         <%- include('./partials/headerDeslogueado') %> 
         <main>
             <div class="uk-section uk-section-small">
-                <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
+                <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                     <h1 class="subtitulo">Formulario de registración</h1>
                     <form action="/users/registracion" method="GET">
                         <div>
                             <label for="nombre">Nombre:</label>
-                            <input type="text" name="nombre" value="">
+                            <input type="text" placeholder="Nombre" name="nombre" id="nombre">
                         </div>
                         <div>
                             <label for="apellido">Apellido:</label>
-                            <input type="text" name="apellido" value="">
+                            <input type="text" placeholder="Apellido" name="apellido" id="apellido">
                         </div>
                         <div>
                             <label for="edad">Edad:</label>
-                            <input type="number" name="edad" value="">
+                            <input type="number" placeholder="Edad" name="edad" id="edad">
                         </div>
                         <div>
                             <label for="email">Email:</label>
-                            <input type="email" name="email" value="">
+                            <input type="email" placeholder="Email" name="email" id="email">
                         </div>
                         <div>
                             <label for="contraseña">Contraseña:</label>
-                            <input type="text" name="contraseña" value="">
+                            <input type="text" placeholder="Contraseña" name="contraseña" id="contraseña">
+                        </div>
+                        <div>
+                            <label for="imagen">Imagen:</label>
+                            <input type="file" placeholder="Imagen" name="imagen" id="imagen">
                         </div>
                         <div>
                             <button type="submit">Enviar</button> 
