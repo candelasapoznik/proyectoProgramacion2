@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
-    <%- include('./partials.head') %> 
+    <%- include('../partials/head') %> 
     <body>
-        <%- include('./partials.headerDeslogueado') %> 
+        <%- include('../partials/headerDeslogueado') %> 
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <h1 class="subtitulo">Formulario de login</h1>
-                <form action="./login.ejs" method="POST">
+                <form action="./logi" method="POST">
                     <div>
                         <label for="email">Email:</label>
                         <input type="email" name="email" value="">
@@ -22,6 +23,6 @@
                 </div>
             </div>
         </main>
-        <%- include('./partials.footer') %> 
+        <%- include('./partials/footer') %> 
     </body>
 </html>
