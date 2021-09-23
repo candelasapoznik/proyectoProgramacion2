@@ -26,67 +26,20 @@
                </section>
                <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% for( let i=0; i<9; i++) { %> 
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
+                            <a href="/posts/detallePost/id<%= usuarios.lista[i].id %>" class="link-detalle">
+                                <img src="<%= posteos.lista[i].campoImagen %> " alt="foto de perfil" class="foto-perfil">
+                                <p class="uk-text-center">Foto del producto</p>
                             </a>
                         </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/posts/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
+                        <% } %> 
                         
                     </div>
                </section>
             </div>
         </div>
     </main>
-
     <%- include('./partials/footer') %> 
 </body>
 
