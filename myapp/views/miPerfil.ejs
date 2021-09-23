@@ -13,7 +13,12 @@
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h1 class="subtitulo">Mi perfil</h1>
-                            <h3 class="uk-margin-remove">Moxy Fulder</h3>
+                            <h3 class="uk-margin-remove"><%= usuarios.lista.nombre %> <%= usuarios.lista.apellido %></h3>
+                            <h3 class="uk-margin-remove"><%= usuarios.lista.email %></h3>
+                            <h3 class="uk-margin-remove"><%= usuarios.lista.documento %></h3>
+                            <h3 class="uk-margin-remove"><%= usuarios.lista.edad %></h3>
+
+
                             <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
                         </div>
                         <div>
