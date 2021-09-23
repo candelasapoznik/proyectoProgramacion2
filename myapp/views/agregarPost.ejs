@@ -7,18 +7,14 @@
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex">
                     <h1 class="subtitulo">Formulario para agregar un post</h1>
-                    <form action="/posts/agregarPost" method="POST">
+                    <form action="/posts/agregarPost" method="GET">
+                        <div>
+                            <label for="imagen">Imagen:</label>
+                            <input type="file" placeholder="Ingrese una imagen" name="imagen" id="imagen">
+                        </div>
                         <div>
                             <label for="caption">Caption:</label>
-                            <input type="text" name="caption" value="">
-                        </div>
-                        <div>
-                            <label for="id">Id:</label>
-                            <input type="number" name="number" value="">
-                        </div>
-                        <div>
-                            <label for="fecha">fecha:</label>
-                            <input type="date" name="fecha" value="">
+                            <input type="text" placeholder="Ingrese una caption" name="caption" id="caption">
                         </div>
                         <div>
                             <button type="submit">Enviar</button> 
