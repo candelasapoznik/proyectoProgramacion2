@@ -8,7 +8,10 @@ email VARCHAR(100) UNIQUE NOT NULL,
 clave VARCHAR(200) NOT NULL,
 dni INT UNSIGNED,
 image VARCHAR(200) NOT NULL,
-fecha DATETIME
+fecha DATETIME,
+nombre VARCHAR(100),
+apellido VARCHAR(100),
+edad INT UNSIGNED
 );
 
 /* CREAR TABLA POSTEOS */
@@ -34,11 +37,11 @@ FOREIGN KEY (post_id) REFERENCES posteos(id)
 );
 
 /* USUARIOS */
-INSERT INTO usuarios VALUES(default, "moxfulder@yahoo.com", "moxfulder", 73148074, "user/img/imagen1.png", "2014-01-02 11:11:11");
-INSERT INTO usuarios VALUES(default, "dcoppit@live.com", "dcoppitr", 82210447, "user/img/imagen2.png", "2013-04-05 14:14:41");
-INSERT INTO usuarios VALUES(default, "gonzalesmaria@yahoo.com.ar", "gonzalesmaria1", 44993031, "user/img/imagen3.png", "2012-02-03 17:27:41");
-INSERT INTO usuarios VALUES(default, "marianorodr@hotmail.com", "mariano1234", 16745667, "user/img/imagen4.png", "2016-10-03 15:27:41");
-INSERT INTO usuarios VALUES(default, "camilasenna@hotmail.com", "camilasen12", 42993039, "user/img/imagen5.png", "2018-08-06 19:28:51");
+INSERT INTO usuarios VALUES(default, "moxfulder@yahoo.com", "moxfulder", 73148074, "user/img/imagen1.png", "2014-01-02 11:11:11","Moxy", "Fulder", "26");
+INSERT INTO usuarios VALUES(default, "dcoppit@live.com", "dcoppitr", 82210447, "user/img/imagen2.png", "2013-04-05 14:14:41", "Damina", "Coppit", "32");
+INSERT INTO usuarios VALUES(default, "gonzalesmaria@yahoo.com.ar", "gonzalesmaria1", 44993031, "user/img/imagen3.png", "2012-02-03 17:27:41", "Maria", "Gonzales", "18");
+INSERT INTO usuarios VALUES(default, "marianorodr@hotmail.com", "mariano1234", 16745667, "user/img/imagen4.png", "2016-10-03 15:27:41","Mariano", "Rodriguez", "32");
+INSERT INTO usuarios VALUES(default, "camilasenna@hotmail.com", "camilasen12", 42993039, "user/img/imagen5.png", "2018-08-06 19:28:51", "Camila", "Senna", "18");
 
 /* POSTEO USUARIO 1 */
 INSERT INTO posteos VALUES(default, "post/img/imagen1.png", "Desayunando con mi primito", "2021-01-02 09:11:15", 1);
