@@ -20,11 +20,16 @@ article.detalle-post .imagen-post{
 }
 .comentarios-detalle .info-post img{
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }
 .comentarios-detalle .info-post h3{
     font-size: 14px;
     font-weight: bolder;
     margin: 0 0 0 8px;
+}
+.comentarios-detalle .info-post h3 a{
+    color: #ff6969;
 }
 .comentarios-detalle .lista-comentarios{
     height: 75%;

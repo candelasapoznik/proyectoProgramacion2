@@ -1,3 +1,5 @@
+const usuarios = require("./usuarios");
+
 let posteos = {
     lista: [
             {
@@ -70,7 +72,15 @@ let posteos = {
                 campoImagen: "/id10local.jpg",
                 fechaDeCreacion: "2021-13-05 18:00:59"
             }
-        ]
+        ],
+        buscarPorId: function (idPosteo){
+            for (let i=0; i< posteos.lista.length; i++){
+                if(posteos.lista[i].id == idPosteo){
+                    let resultado = posteos.lista[i];
+                    return resultado
+                }
+            }
+        }
     }
 
 module.exports = posteos;

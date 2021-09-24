@@ -18,6 +18,9 @@ article.post div.info-usuario h4{
    margin: 8px 10px;
 }
 
+.usuario a{
+    color: #ff6969;
+}
 article.post div.post-body{
     padding-bottom: 5px;
     border-bottom: 1px solid lightgray;
