@@ -1,5 +1,3 @@
-const usuarios = require("./usuarios");
-
 let posteos = {
     lista: [
             {
@@ -77,9 +75,18 @@ let posteos = {
             for (let i=0; i< posteos.lista.length; i++){
                 if(posteos.lista[i].id == idPosteo){
                     let resultado = posteos.lista[i];
-                    return resultado
+                    return resultado;
                 }
             }
+        },
+        buscarPorIdCreador: function (idUsuario){
+            let resultado = [];
+            for (let i=0; i< posteos.lista.length; i++){
+                if(posteos.lista[i].idUsuarioQueLoCreo == idUsuario){  // me pushea dentro de mi array los id de cada posteo que pertenece al mismo usuario
+                    resultado.push(posteos.lista[i]);
+                }
+            }
+            return resultado;
         }
     }
 

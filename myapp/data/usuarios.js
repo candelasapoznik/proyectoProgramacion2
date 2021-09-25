@@ -54,7 +54,15 @@ let usuarios = {
                 apellido: "Senna",
                 edad: 18
             },
-        ]
+        ],
+        buscarPorId: function (idUsuario){
+            for (let i=0; i< usuarios.lista.length; i++){
+                if(usuarios.lista[i].id == idUsuario){
+                    let resultado = usuarios.lista[i];
+                    return resultado;
+                }
+            }
+        }
     }
 
 module.exports = usuarios;
