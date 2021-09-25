@@ -11,9 +11,9 @@ router.get('/registracion', usersController.register);
 //PARA LOGIN
 router.get('/login', usersController.login);
 //PARA DETALLE USUARIO
-router.get('/detalleUsuario/:id', usersController.detail);
+router.get('/detalleUsuario/id/:id', usersController.detail);
 //PARA MI PERFIL
-router.get('/miPerfil/id/:id', usersController.profile);
+router.get('/miPerfil/:id', usersController.profile);
 //PARA EDITAR PERFIL
 router.get('/editarMiPerfil/:id', usersController.editProfile);
 

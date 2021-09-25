@@ -62,7 +62,8 @@ let usuarios = {
                     return resultado;
                 }
             }
-        }
+        },
+
     }
 
 module.exports = usuarios;

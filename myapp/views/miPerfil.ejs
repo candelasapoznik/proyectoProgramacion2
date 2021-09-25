@@ -14,7 +14,7 @@
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h1 class="subtitulo">Mi perfil</h1>
-                            <h3 class="uk-margin-remove"><%= usuario.nombre%> <%= usuario.lista.apellido %></h3>
+                            <h3 class="uk-margin-remove"><%= usuario.nombre%> <%= usuario.apellido %></h3>
                             <h3 class="uk-margin-remove"><%= usuario.email %></h3>
                             <h3 class="uk-margin-remove"><%= usuario.documento %></h3>
                             <h3 class="uk-margin-remove"><%= usuario.edad %></h3>
@@ -34,7 +34,7 @@
 
                 <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove">
-                        <% for(let i=0; i < posteos.lenght ; i++ ) { %>
+                        <% for(let i=0; i < posteos.length ; i++ ) { %>
                             <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                                 <a href="/posts/detallePost/id/<%=posteos[i].id%>" class="link-detalle">
                                     <img src="/imagenesPosteos/<%=posteos[i].campoImagen%>" alt="foto de perfil" class="foto-perfil">
