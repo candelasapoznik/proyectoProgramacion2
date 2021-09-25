@@ -30,11 +30,7 @@ const userController={
         })
     },
     editProfile : function (req,res,next){
-        for (let index = 0; index < usuarios.lista.length; index++) {
-            if (usuarios.lista[index].id==req.params.id) {
-                return res.render('editarMiPerfil',{ editarPerfil: usuarios.lista[index]})
-            }
+            return res.render('editarMiPerfil',{})
         }
-    }
 }
 module.exports=userController;

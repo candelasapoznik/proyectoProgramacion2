@@ -14,7 +14,7 @@
                             <div>
                                 <img src="./imagenesUsuarios<%= listaPosteos[i].fotoDePerfil %>" alt="">
                             </div>
-                            <h4 class="usuario"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].id %> ">Leo Messi</a></h4>
+                            <h4 class="usuario"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %> ">Leo Messi</a></h4>
                             
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
@@ -30,7 +30,7 @@
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <h5 class="usuario uk-width-1-6"><a href="/users/detalleUsuario">Leo Messi</a></h5>
+                                <h5 class="usuario uk-width-1-6"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %>">Leo Messi</a></h5>
                                 <p class="uk-width-5-6"><%= listaPosteos[i].campoTextoDescriptivo %> </p>
                             </div>
                         </div>
