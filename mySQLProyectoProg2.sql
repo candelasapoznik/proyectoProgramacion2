@@ -66,31 +66,31 @@ INSERT INTO posteos VALUES(default, "post/img/imagen10.png", "Abrimos nuevo loca
 
 
 /* COMENTARIOS DEL USUARIO 1 */
-INSERT INTO comentarios VALUES(default, "Que lindo!!!", "2021-01-02 10:11:14", "1", "1");
-INSERT INTO comentarios VALUES(default, "Awww que tiernos", "2021-01-02 10:27:35", "1", "1");
-INSERT INTO comentarios VALUES(default, "Cuanto cuesta?", "2021-01-02 10:31:45", "1", "2");
-INSERT INTO comentarios VALUES(default, "Ya lo compre! y estoy haciendo la lasagna, despues cuento como salio", "2021-01-02 10:33:12", "1", "2");
+INSERT INTO comentarios VALUES(default, "Que lindo!!!", "2021-01-02 10:11:14", 1, 1);
+INSERT INTO comentarios VALUES(default, "Awww que tiernos", "2021-01-02 10:27:35", 1, 1);
+INSERT INTO comentarios VALUES(default, "Cuanto cuesta?", "2021-01-02 10:31:45", 1, 2);
+INSERT INTO comentarios VALUES(default, "Ya lo compre! y estoy haciendo la lasagna, despues cuento como salio", "2021-01-02 10:33:12", 1, 2);
 
 /*  COMENTARIOS DEL USUARIO 2 */
-INSERT INTO comentarios VALUES(default, "Hermosa vista", "2021-02-03 15:24:41", "2", "3");
-INSERT INTO comentarios VALUES(default, "ojala estar ahi!", "2021-02-03 15:24:55", "2", "3");
-INSERT INTO comentarios VALUES(default, "se ven riquisimas!", "2021-02-03 16:00:48", "2", "4");
-INSERT INTO comentarios VALUES(default, "Estan buenisimas! yo las probe ayer y les encantaron a toda la familia", "2021-02-03 16:13:40", "2", "4");
+INSERT INTO comentarios VALUES(default, "Hermosa vista", "2021-02-03 15:24:41", 2, 3);
+INSERT INTO comentarios VALUES(default, "ojala estar ahi!", "2021-02-03 15:24:55", 2, 3);
+INSERT INTO comentarios VALUES(default, "se ven riquisimas!", "2021-02-03 16:00:48", 2, 4);
+INSERT INTO comentarios VALUES(default, "Estan buenisimas! yo las probe ayer y les encantaron a toda la familia", "2021-02-03 16:13:40", 2, 4);
 
 /*  COMENTARIOS DEL USUARIO 3 */
-INSERT INTO comentarios VALUES(default, "sumenme!", "2021-03-04 07:34:02", "3", "5");
-INSERT INTO comentarios VALUES(default, "que andan cocinando?", "2021-03-04 07:35:02", "3", "5");
-INSERT INTO comentarios VALUES(default, "bellos!", "2021-03-04 07:36:02", "3", "6");
-INSERT INTO comentarios VALUES(default, "cuando llevan las viandas?", "2021-03-04 07:38:22", "3", "6");
+INSERT INTO comentarios VALUES(default, "sumenme!", "2021-03-04 07:34:02", 3, 5);
+INSERT INTO comentarios VALUES(default, "que andan cocinando?", "2021-03-04 07:35:02", 3, 5);
+INSERT INTO comentarios VALUES(default, "bellos!", "2021-03-04 07:36:02", 3, 6);
+INSERT INTO comentarios VALUES(default, "cuando llevan las viandas?", "2021-03-04 07:38:22", 3, 6);
 
 /*  COMENTARIOS DEL USUARIO 4 */
-INSERT INTO comentarios VALUES(default, "a ejercitar y comer sano!", "2020-12-8 22:13:56", "4", "7");
-INSERT INTO comentarios VALUES(default, "Estan buenisimas las recetas! yo las probe ayer y les encantaron a toda la familia", "2020-12-8 22:14:56", "4", "7");
-INSERT INTO comentarios VALUES(default, "estoy igual", "2020-12-8 22:30:54", "4", "8");
-INSERT INTO comentarios VALUES(default, "cuando rendis?", "2020-12-8 22:33:13", "4", "8");
+INSERT INTO comentarios VALUES(default, "a ejercitar y comer sano!", "2020-12-8 22:13:56", 4, 7);
+INSERT INTO comentarios VALUES(default, "Estan buenisimas las recetas! yo las probe ayer y les encantaron a toda la familia", "2020-12-8 22:14:56", 4, 7);
+INSERT INTO comentarios VALUES(default, "estoy igual", "2020-12-8 22:30:54", 4, 8);
+INSERT INTO comentarios VALUES(default, "cuando rendis?", "2020-12-8 22:33:13", 4, 8);
 
 /*  COMENTARIOS DEL USUARIO 5 */
-INSERT INTO comentarios VALUES(default, "feliz cumple!!", "2021-03-04 07:34:02", "5", "9");
-INSERT INTO comentarios VALUES(default, "felicidades!", "2021-03-04 07:38:13", "5", "9");
-INSERT INTO comentarios VALUES(default, "que horarios esta abierto?", "2021-03-04 07:39:43", "5", "10");
-INSERT INTO comentarios VALUES(default, "lindos colores!", "2021-03-04 07:39:59", "5", "10");
+INSERT INTO comentarios VALUES(default, "feliz cumple!!", "2021-03-04 07:34:02", 5, 9);
+INSERT INTO comentarios VALUES(default, "felicidades!", "2021-03-04 07:38:13", 5, 9);
+INSERT INTO comentarios VALUES(default, "que horarios esta abierto?", "2021-03-04 07:39:43", 5, 10);
+INSERT INTO comentarios VALUES(default, "lindos colores!", "2021-03-04 07:39:59", 5, 10);
