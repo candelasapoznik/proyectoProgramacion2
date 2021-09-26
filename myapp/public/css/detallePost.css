@@ -66,6 +66,8 @@ article.detalle-post .imagen-post{
     text-decoration: none;
     margin-right: 4px !important;
 }
-
+.imagenesPerfiles{
+    border-radius: 20%;
+}
 
 

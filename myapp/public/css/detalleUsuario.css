@@ -6,7 +6,6 @@
     list-style: none;
     padding: 0  ;
 }
-
 .muro{
     margin-top: 20px;
     padding-top: 20px;
@@ -15,4 +14,7 @@
 .muro .link-detalle{
     color: gray;
     text-decoration: none;
+}
+.imagenUsuario{
+    border-radius: 20%;
 }
