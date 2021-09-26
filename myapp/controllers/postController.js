@@ -12,7 +12,7 @@ const postController={
         return res.render('detallePost', { 
             detallePost: infoPosteo, //es la info que le envio a la vista 
             listaComentario : infoComentarios,
-            listaUsuario: infoUsuario
+            listaUsuario: infoUsuario,
         }) //le envio la info del posteo y los comentarios a la vista
     },
     agregarPost: function (req,res,next){
