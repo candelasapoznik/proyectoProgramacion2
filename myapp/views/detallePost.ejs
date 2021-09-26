@@ -12,8 +12,10 @@
                     </article>
                     <article class="uk-width-1-3 uk-flex uk-flex-column comentarios-detalle">
                         <div class="info-post uk-flex uk-flex-middle">
-                            <img src="../../../imagenesUsuarios<%= listaUsuario.fotoDePerfil %>" alt="Foto del usuario">
-                            <h3><a href="/users/detalleUsuario/id/<%= detallePost.idUsuarioQueLoCreo %>">Leo Messi</a></h3> 
+                    
+                            <img src="/imagenesUsuarios<%= listaUsuario.fotoDePerfil %>" alt="Foto del usuario">
+                            <h3><a href="/users/detalleUsuario/id/<%= detallePost.idUsuarioQueLoCreo %>"><%= listaUsuario.nombre %></a></h3> 
+                         
                         </div>
                         <div class="lista-comentarios" >
                             <% for( let i=0; i< 5; i++) { %> 

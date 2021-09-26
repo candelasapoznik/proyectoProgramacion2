@@ -79,10 +79,10 @@ let posteos = {
                 }
             }
         },
-        buscarPorIdCreador: function (idUsuario){
+        buscarPorIdCreador: function (idPosteo){
             let resultado = [];
             for (let i=0; i< posteos.lista.length; i++){
-                if(posteos.lista[i].idUsuarioQueLoCreo == idUsuario){  // me pushea dentro de mi array los id de cada posteo que pertenece al mismo usuario
+                if(posteos.lista[i].idUsuarioQueLoCreo == idPosteo){  // me pushea dentro de mi array los id de cada posteo que pertenece al mismo usuario
                     resultado.push(posteos.lista[i]);
                 }
             }
