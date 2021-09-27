@@ -5,7 +5,7 @@ USE proyectoProg2;
 CREATE TABLE usuarios(
 id INT PRIMARY KEY auto_increment,
 email VARCHAR(100) UNIQUE NOT NULL,
-clave VARCHAR(200) NOT NULL,
+password VARCHAR(200) NOT NULL,
 dni INT UNSIGNED,
 image VARCHAR(200) NOT NULL,
 fecha DATETIME,
