@@ -8,13 +8,14 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
                 <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                    <% for (let i=0; i < listaPosteos.length; i++) { %> 
+                    <% for (let i=0; i < listaPosteos.length && i< listaUsuarios.length; i++) { %> 
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
+        
                             <div>
-                                <img src="./imagenesUsuarios<%= listaPosteos[i].fotoDePerfil %>" alt="">
+                                <img src="./imagenesUsuarios<%= listaUsuarios[i].fotoDePerfil %>" alt="">
                             </div>
-                            <h4 class="usuario"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %> ">Leo Messi</a></h4>
+                            <h4 class="usuario"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %> "><%= listaUsuarios[i].nombre %> <%= listaUsuarios[i].apellido %></a></h4>
                             
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
@@ -30,7 +31,7 @@
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <h5 class="usuario uk-width-1-6"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %>">Leo Messi</a></h5>
+                                <h5 class="usuario uk-width-1-6"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %>"><%= listaUsuarios[i].nombre %> <%= listaUsuarios[i].apellido %></a></h5>
                                 <p class="uk-width-5-6"><%= listaPosteos[i].campoTextoDescriptivo %> </p>
                             </div>
                         </div>

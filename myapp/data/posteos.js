@@ -88,6 +88,7 @@ let posteos = {
             }
             return resultado;
         }
+        
     }
 
 module.exports = posteos;
