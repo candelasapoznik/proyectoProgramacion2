@@ -11,13 +11,13 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
         },
         imagen:{
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
         },
         descrip:{
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
         },
         fecha_creacion:{
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         usuario_id:{
             type: dataTypes.INTEGER,

@@ -11,22 +11,22 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
         },
         email:{
-            type: dataTypes.VARCHAR,
+            type: dataTypes.STRING,
         },
         dni:{
             type: dataTypes.INTEGER,
         },
         image:{
-            type: dataTypes.DATE,
+            type: dataTypes.STRING,
         },
         fecha:{
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         nombre:{
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
         },
         apellido:{
-            type: dataTypes.VARCHAR
+            type: dataTypes.STRING,
         },
         edad:{
             type: dataTypes.INTEGER
