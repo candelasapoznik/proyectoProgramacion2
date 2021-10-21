@@ -10,6 +10,22 @@ let postController=require('../controllers/postController');
 router.get('/detallePost/id/:id', postController.detailPost); //luego de los dos puntos le pongo el valor id que es lo que viaja por url
 //AGREGAR POST
 router.get('/agregarPost', postController.agregarPost);
-
+router.post('/agregarPost', postController.savePost)
+//BORRAR POST
+router.get("/borrarPost/:id",postController.borrarPost);
+//EDITAR POST
+router.get("/editarPost/:id",postController.editarPost);
+router.post("/editarPost/:id",postController.updatePost);
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+//incom falta upload//
