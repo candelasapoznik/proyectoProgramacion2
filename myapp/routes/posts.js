@@ -13,24 +13,14 @@ router.get('/detallePost/id/:id', postController.detailPost); //luego de los dos
 router.get('/agregarPost', postController.agregarPost);
 router.post('/agregarPost', postController.savePost)
 //BORRAR POST
-router.get("/borrarPost/:id",postController.borrarPost);
+router.post("/borrarPost/:id",postController.borrarPost);
 //EDITAR POST
 router.get("/editarPost/:id",postController.editarPost);
 router.post("/editarPost/:id",postController.updatePost);
+router.post('/comentar',postController.comentar);
 
 //CAMI//
 router.get('/busqueda', posteosController.busqueda);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-//incom falta upload//
