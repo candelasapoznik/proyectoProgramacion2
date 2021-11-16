@@ -71,24 +71,25 @@ let posteos = {
                 fechaDeCreacion: "2021-13-05 18:00:59"
             }
         ],
-        buscarPorId: function (idPosteo){
-            for (let i=0; i< posteos.lista.length; i++){
-                if(posteos.lista[i].id == idPosteo){
-                    let resultado = posteos.lista[i];
-                    return resultado;
-                }
-            }
-        },
-        buscarPorIdCreador: function (idUsuario){
-            let resultado = [];
-            for (let i=0; i< posteos.lista.length; i++){
-                if(posteos.lista[i].idUsuarioQueLoCreo == idUsuario){  // me pushea dentro de mi array los id de cada posteo que pertenece al mismo usuario
-                    resultado.push(posteos.lista[i]);
-                }
-            }
-            return resultado;
-        }
+        // buscarPorId: function (idPosteo){
+        //     for (let i=0; i< posteos.lista.length; i++){
+        //         if(posteos.lista[i].id == idPosteo){
+        //             let resultado = posteos.lista[i];
+        //             return resultado;
+        //         }
+        //     }
+        // },
+        // buscarPorIdCreador: function (idUsuario){
+        //     let resultado = [];
+        //     for (let i=0; i< posteos.lista.length; i++){
+        //         if(posteos.lista[i].idUsuarioQueLoCreo == idUsuario){  // me pushea dentro de mi array los id de cada posteo que pertenece al mismo usuario
+        //             resultado.push(posteos.lista[i]);
+        //         }
+        //     }
+        //     return resultado;
+        // }
         
     }
+
 
 module.exports = posteos;
