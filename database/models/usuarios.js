@@ -1,7 +1,6 @@
 module.exports = function(sequelize, dataTypes){
     //Definir un alias
-    let alias = "Usuario"; 
-
+    let alias = "Usuario"; //Con este alias sequelize va a identificar internamente al archivo de modelo.
 
     //Describir la configuración de las columnas de la tabla
     let cols = {
@@ -28,20 +27,26 @@ module.exports = function(sequelize, dataTypes){
         contrasena: {
             type: dataTypes.STRING
             },
-        foto_de_perfil:{
-            type: dataTypes.STRING
-            },
-        foto_de_perfil:{
+        fotoDePerfil:{
             type: dataTypes.STRING
             }
         }
       
     let config = {
-        timestamps:false,
-        underscored:true,
+        timestamps:false, //porque la tabla no tiene los campos created_at y updated_at
+        underscored:false,  //los nombres de las columnas (las propiedades) en la db no tienen guiones bajos en lugar del formato camelCase.   
         tableName: "Usuarios"
     }
-
-    const Usuario = sequelize.define(alias, cols, config); 
-    return Usuario; 
+    const Usuario = sequelize.define(alias, cols, config);
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.posteo, {
+            as: 'Posteos',
+            foreignKey: 'idUsuarioQueLoCreo'
+        });
+        Usuario.hasMany(models.comentario,{
+            as: 'Comentarios',
+            foreignKey: 'idUsuarioQueLoCreo'
+        })
+    }
+return Usuario; 
 }
