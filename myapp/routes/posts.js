@@ -2,8 +2,8 @@
 var express = require('express');
 var router = express.Router();
 
-//CREO UNA VARIABLE PARA CONECTAR LA RUTA CON EL CONTROLADOR
-let postController=require('../controllers/postController');
+//CREO UNA VARIABLE PARA CONECTAR LA RUTA CON EL CONTROLADOR. Para usar los metodos del controlador debemos requerir el modulo en routes.
+let postController=require('../controllers/postController');  
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST
 //DETALLE POST
