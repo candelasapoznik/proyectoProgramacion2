@@ -2,6 +2,9 @@
 var express = require('express');
 var router = express.Router();
 
+//OBJETO DATA BASE
+const db=require('../database/models');
+
 //CREO UNA VARIABLE PARA CONECTAR LA RUTA CON EL CONTROLADOR
 let indexController=require('../controllers/indexController');
 

@@ -10,6 +10,9 @@ header{
 .headerLogueado{
     background-color: rgb(255, 105, 105);
 }
+.headerDeslogueado{
+    background-color: rgb(255, 105, 105);
+}
 header section{
     height: 100%;
 }
