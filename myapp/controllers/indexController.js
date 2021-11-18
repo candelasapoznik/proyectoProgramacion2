@@ -13,7 +13,7 @@ const indexController={
                 return res.render("index", {Posteo: Posteo});
             }).catch(error => {
                 return res.send(error)       
-            });
+            })
         )
     }
 }    
