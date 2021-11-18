@@ -21,6 +21,17 @@
         <imput type= "text" class="text" name="busqueda"></imput>
         <button>Enviar</button>
     </form> -->
+    <h1>Posteos</h1>
+    <ul>
+        <% for (let i = 0; i < posteos.lenght; i++) { %>
+            <li>
+               <a href="/posteos"><%= posteos[i].imagen%></a> 
+                <%= posteos[i].descrip%>
+                <a href="#2"><%= posteos[i].usuario_id%></a>
+
+            </li>
+         }
+    </ul>
 
 </body>
 
