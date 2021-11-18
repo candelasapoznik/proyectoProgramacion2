@@ -1,6 +1,5 @@
-const posts = require('../data/posteos');
-const users = require('../data/usuarios')
-const comentarios = require('../data/comentarios');
+let db = require('../database/models')
+let bcrypt = require('bcryptjs')
 
 // defino una variable que contiene el OL donde escribimos los métodos que se van a encargar de manejar los request.
 const postController={

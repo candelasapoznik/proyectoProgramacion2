@@ -11,3 +11,4 @@ router.get('/', resultadoBusquedaController.results);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
+//
