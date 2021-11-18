@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./partials/head') %> 
+	    <%- include('./partials/head') %> 
     <body>
-        <%- include('./partials/headerDeslogueado') %> 
+        <% if (usuarioLogueado== true) { %>
+            <%- include('./partials/headerLogueado') %> 
+        <% } else{ %>
+            <%- include('./partials/headerDeslgueado') %>
+        <% } %>
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
-                <h1 class="subtitulo">Formulario de login</h1>
+                <h1 class="subtitulo">Login</h1>
+                   
+                  
+                    <label for="">Recordame</label> <input type="checkbox" name="recordame">
+                    <button>Enviar</button>
+
                 <form class= "userLogin" action="/users/login" method="POST">
+                    <% if(locals.error != undefined){ %> 
+                        <p><%= error.message %> </p>
+                    <% } %> 
                     <div>
                         <label for="email">Email: </label>
                         <input type="email" placeholder="Email" name="email" id="email">
                     </div>
                     <div>
-                        <label for="contraseña">Contraseña:</label>
-                        <input type="text" placeholder="Contraseña" name="contraseña" id="contraseña">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="text" placeholder="Contrasena" name="contrasena" id="contrasena">
                     </div>
                     <div>
-                        <button type="submit">Enviar</button> 
+                        <label for="recordarme">Recordarme</label>
+					    <input type="checkbox" name="recordarme">
+                    </div>
+                    <div> 
+                        <button type="submit">Iniciar sesión</button> 
                     </div>
                 </form>
                 </div>
@@ -26,3 +42,4 @@
         <%- include('./partials/footer') %> 
     </body>
 </html>
+

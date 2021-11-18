@@ -12,9 +12,9 @@ router.post('/registracion', usersController.registerPost);
 //PARA LOGIN 
 router.get('/login', usersController.login);
 //PARA CHEQUEAR QUE EL USUARIO ESTA OK, SINO SERÍA POR GET
-router.post('/login', usersController.loginPost);
+router.post('/login', usersController.processlogin);
 //PARA LOGOUT
-router.get('/logout', usersController.logout);
+router.post('/logout', usersController.logout);
 //PARA DETALLE USUARIO
 router.get('/detalleUsuario/id/:id', usersController.detail);
 //PARA MI PERFIL
@@ -25,7 +25,6 @@ router.post('/editarMiPerfil/:id', usersController.editProfile);
 router.get('/seguir/:id', usersController.follow);
 //PARA DEJAR DE SEGUIR
 router.get('/dejarDeSeguir/:id', usersController.unfollow);
-
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
