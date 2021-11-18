@@ -1,14 +1,21 @@
-const posts = require('../data/posteos');
-const users = require('../data/usuarios')
-const comentarios = require('../data/comentarios');
+let db = require('../database/models')
+let bcrypt = require('bcryptjs')
 
-const editarMiPerfilController={
+const indexController={
     index: function (req,res,next){
-        res.render('index',{
-            listaPosteos: posts.lista,
-            listaUsuarios: users.lista,
-            listaComent: comentarios.lista
-        })
+        db.Posteo.findAll(
+            ({include:[
+                { association: "usuarios" },
+                { association: "comentarios" }
+            ],
+                order:[["createdAt","DESC"]],
+            }).then(Posteo=> {
+                return res.render("index", {Posteo: Posteo});
+            }).catch(error => {
+                return res.send(error)       
+            });
+        )
     }
-};
-module.exports= editarMiPerfilController;
+}    
+      
+module.exports= indexController;

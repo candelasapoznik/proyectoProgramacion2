@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <html>
-        <%- include('./partials/head') %> 
-        <body>
+        <% if (usuarioLogueado== true) { %>
             <%- include('./partials/headerLogueado') %> 
+        <% } else{ %>
+            <%- include('./partials/headerDeslgueado') %>
+        <% } %>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
                 <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                    <% for (let i=0; i < listaPosteos.length && i< listaUsuarios.length; i++) { %> 
+                    <% for (let i=0; i < listaPosteos.length; i++) { %> 
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
-        
                             <div>
-                                <img src="./imagenesUsuarios<%= listaUsuarios[i].fotoDePerfil %>" alt="">
+                                <img src=%>" alt="">
                             </div>
                             <h4 class="usuario"><a href="/users/detalleUsuario/id/<%= listaPosteos[i].idUsuarioQueLoCreo %> "><%= listaUsuarios[i].nombre %> <%= listaUsuarios[i].apellido %></a></h4>
                             

@@ -16,7 +16,7 @@ module.exports = function(sequelize, dataTypes){
         dni:{
             type: dataTypes.INTEGER,
         },
-        image:{
+        imagen:{
             type: dataTypes.STRING,
         },
         fecha:{
