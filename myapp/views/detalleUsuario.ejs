@@ -8,11 +8,11 @@
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img class='imagenUsuario'src="/imagenesUsuarios/<%= detalleUsuario.fotoDePerfil %>"  alt="foto de perfil" class="foto-perfil">
+                        <img class='imagenUsuario'src="/imagenesUsuarios/<%=Usuario.fotoDePerfil %>"  alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="uk-margin-remove"><%= detalleUsuario.nombre%> <%= detalleUsuario.apellido %></h3>
+                            <h3 class="uk-margin-remove"><%=Usuario.nombre%> <%=Usuario.apellido%></h3>
                             <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
                         </div>
                         <div>
@@ -29,8 +29,8 @@
                         <% for( let i=0; i<posteos.length; i++) { %> 
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                             <a href="/posts/detallePost/id/<%=posteos[i].id%>" class="link-detalle">
-                                <img src="/imagenesPosteos/<%=posteos[i].campoImagen%> " alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center"><%=posteos[i].campoTextoDescriptivo%></p>
+                                <img src="/imagenesPosteos/<%=posteos[i].imagen%> " alt="foto de perfil" class="foto-perfil">
+                                <p class="uk-text-center"><%=posteos[i].caption%></p>
                             </a>
                         </div>
                         <% } %> 

@@ -16,8 +16,6 @@ const userController={
             fechaDeNacimiento: req.body.fechaDeNacimiento,
             createdAt: req.body.createdAt,
             updatedAt: req.body.updatedAt
-
-
         })
         .then(Usuario => {
             res.redirect('/')
@@ -69,5 +67,21 @@ const userController={
         res.clearCookie('usuarioId');
         return res.redirect('/');
     },
+    detail: function (req,res){ 
+        let id = req.params.id
+        db.Usuario.findByPk(id)
+        .then(Usuario => {
+            return res.render('detalleUsuario', {Usuario: Usuario})
+        })
+        .catch( error => {
+            return res.send(error);
+        })
+    },
+    profile: function (req,res){
+        res.render('miPerfil');
+    },
+    editProfile: function (req,res,next){
+        res.render('editarMiPerfil',{})
+    }
 };
     module.exports = usersController

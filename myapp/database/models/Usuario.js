@@ -16,7 +16,8 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING
             },
         nombreDeUsuario: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            null: false
         },
         edad: {
             type: dataTypes.INTERGER

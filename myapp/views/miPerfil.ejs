@@ -37,8 +37,8 @@
                         <% for(let i=0; i < posteos.length ; i++ ) { %>
                             <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                                 <a href="/posts/detallePost/id/<%=posteos[i].id%>" class="link-detalle">
-                                    <img src="/imagenesPosteos/<%=posteos[i].campoImagen%>" alt="foto de perfil" class="foto-perfil">
-                                    <p class="uk-text-center"><%=posteos[i].campoTextoDescriptivo%></p>
+                                    <img src="/imagenesPosteos/<%=posteos[i].imagen%>" alt="foto de perfil" class="foto-perfil">
+                                    <p class="uk-text-center"><%=posteos[i].caption%></p>
                                 </a>
                             </div>
                         <% } %>
