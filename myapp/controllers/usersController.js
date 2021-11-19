@@ -1,7 +1,32 @@
 let db = require('../database/models')
-let bcrypt = require('bcryptjs')
+let bcrypt = require('bcryptjs');
+const Usuario = require('../database/models/Usuario');
 
 const userController={
+    register: function (req,res){
+        res.render('registracion')
+    },
+    registerPost:function (req,res){
+        let contrasenaEncriptada = bcrypt.hashSync(req.body.contrasena, 10)
+        console.log(contrasenaEncriptada)
+        db.Usuario.create({
+            nombreDeUsuario: req.body.nombreDeUsuario,
+            email: req.body.email,
+            contrasena: contrasenaEncriptada,
+            fechaDeNacimiento: req.body.fechaDeNacimiento,
+            createdAt: req.body.createdAt,
+            updatedAt: req.body.updatedAt
+
+
+        })
+        .then(Usuario => {
+            res.redirect('/')
+        })
+        .catch(err => {
+            console.log(err);
+            res.send(err)
+        })
+    },
     login: function(req,res){
         res.render('login')
     },

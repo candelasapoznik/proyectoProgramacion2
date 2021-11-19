@@ -15,6 +15,9 @@ module.exports = function(sequelize, dataTypes){
         apellido: {
             type: dataTypes.STRING
             },
+        nombreDeUsuario: {
+            type: dataTypes.STRING
+        },
         edad: {
             type: dataTypes.INTERGER
             },
@@ -27,9 +30,18 @@ module.exports = function(sequelize, dataTypes){
         contrasena: {
             type: dataTypes.STRING
             },
+        fechaDeNacimiento: {
+            type: dataTypes.DATE,
+            },
         fotoDePerfil:{
             type: dataTypes.STRING
-            }
+            },
+        createdAt:{
+            type: dataTypes.DATE,
+            },
+        updatedAt:{
+            type: dataTypes.DATE,
+            },
         }
 
     let config = {

@@ -6,8 +6,9 @@ var router = express.Router();
 let usersController=require('../controllers/usersController');
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST EN ESTE CASO PARA USER
-// PARA REGISTRO
+// PARA REGISTRO: ruta por GET que envía el formulario de creación
 router.get('/registracion', usersController.register);
+// ruta por POST que procesa la información del formulario registracion
 router.post('/registracion', usersController.registerPost);
 //PARA LOGIN 
 router.get('/login', usersController.login);
