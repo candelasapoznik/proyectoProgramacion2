@@ -20,6 +20,7 @@ router.post('/logout', usersController.logout);
 router.get('/detalleUsuario/id/:id', usersController.detail);
 //PARA MI PERFIL
 router.get('/miPerfil/:id', usersController.profile);
+router.get("/test", usersController.test)
 //PARA EDITAR PERFIL GET
 router.get('/editarMiPerfil/:id', usersController.editProfile);
 //PARA EDITAR MI PERFIL POST
