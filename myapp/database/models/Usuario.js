@@ -45,7 +45,7 @@ module.exports = function(sequelize, dataTypes){
         }
 
     let config = {
-        timestamps:false, //porque la tabla no tiene los campos created_at y updated_at
+        timestamps: true, //porque la tabla tiene los campos created_at y updated_at
         underscored:false,  //los nombres de las columnas (las propiedades) en la db no tienen guiones bajos en lugar del formato camelCase.   
         tableName: "Usuarios"
     }
