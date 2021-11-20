@@ -17,7 +17,6 @@ module.exports = function(sequelize, dataTypes){
             },
         nombreDeUsuario: {
             type: dataTypes.STRING,
-            null: false
         },
         edad: {
             type: dataTypes.INTERGER

@@ -11,6 +11,7 @@ const userController={
         console.log(contrasenaEncriptada)
         db.Usuario.create({
             nombreDeUsuario: req.body.nombreDeUsuario,
+            edad: req.body.edad,
             email: req.body.email,
             contrasena: contrasenaEncriptada,
             fechaDeNacimiento: req.body.fechaDeNacimiento,
