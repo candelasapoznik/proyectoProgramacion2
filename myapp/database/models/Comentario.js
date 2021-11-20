@@ -4,19 +4,19 @@ module.exports = function(sequelize, dataTypes){
 
     //Describir la configuración de las columnas de la tabla
     let cols = {
-        idPostComentario: {
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
             },
-        idUsuarioQueLoCreo: {
+           comentario: {
+                type: dataTypes.STRING
+                },
+        usuario_id: {
             type: dataTypes.INTEGER
             },
         idPost: {
             type: dataTypes.INTEGER
-            },
-        textoComentario: {
-            type: dataTypes.STRING
             },
         createdAt:{
             type: dataTypes.DATE,
@@ -35,9 +35,10 @@ module.exports = function(sequelize, dataTypes){
     const Comentario = sequelize.define(alias, cols, config); 
     Comentario.associate = function(models){
         Comentario.belongsTo(models.Usuario,{
-            as: 'usuarios',
-            foreignKey: 'idUsuarioQueLoCreo'
+            as: 'Usuario',
+            foreignKey: 'usuario_id'
         })
-    return Comentario; 
     }
+    return Comentario; 
+
 } 

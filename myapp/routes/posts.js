@@ -4,7 +4,6 @@ var router = express.Router();
 
 //CREO UNA VARIABLE PARA CONECTAR LA RUTA CON EL CONTROLADOR
 let postController=require('../controllers/postController');
-const posteosController = require('../controllers/posteosController');
 
 //DEFINO LA RUTA PARA MANEJAR LOS DISTINTOS TIPOS DE REQUEST
 //DETALLE POST
@@ -20,7 +19,7 @@ router.post("/editarPost/:id",postController.updatePost);
 router.post('/comentar',postController.comentar);
 
 //CAMI//
-router.get('/busqueda', posteosController.busqueda);
+router.get('/busqueda', postController.busqueda);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;

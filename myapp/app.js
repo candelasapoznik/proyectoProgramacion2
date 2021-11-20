@@ -9,7 +9,6 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postRouter = require('./routes/posts');
-var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
 
 var app = express();
 

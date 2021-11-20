@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <html>
-        <% if (usuarioLogueado== true) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslgueado') %>
-        <% } %>
+        <%- include('./partials/head') %>
+        <body>
+            
+            <%- include('./partials/headerDeslogueado') %>
+
     <main>
         <ul>
             <% for (let i = 0; i < posteos.length; i++){ %>
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="<%=posteo[i].usuario.imagen%>" alt="foto de perfil">
+                                <img src="<%=posteos[i].Usuario.fotoDePerfil%>" alt="foto de perfil">
                             </div>
-                            <h4><a href="/usuario/detalle/<%=posteo[i].usuario.id%>"><%=posteo[i].usuario.nombreDeUsuario%></a></h4>
+                            <h4><a href="/usuario/detalle/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h4>
                         </div>
-                        div class="post-body uk-flex uk-flex-center">
-                            <a href="/post/detalle/<%=posteo[i].id%>">
-                                <img src="<%=posteo[i].imagen%>" alt="posteo">
+                        <div class="post-body uk-flex uk-flex-center">
+                            <a href="/post/detalle/<%=posteos[i].id%>">
+                                <img src="<%=posteos[i].imagen%>" alt="posteo">
                             </a>
                         </div>
                         <div class="post-reacciones">
@@ -29,17 +29,17 @@
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6"><a href="/usuario/detalle/<%=posteos[i].usuario.id%>"><%=posteo[i].usuario.nombreDeUsuario%></a></h5>
+                                <h5 class="uk-width-1-6"><a href="/usuario/detalle/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h5>
                                 <p class="uk-width-5-6"><%=posteos[i].descrip%></p>
                             </div>
                         </div>
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for (let j = 0; j < posteos[i].comentarios.length; j++){ %>
+                                <% for (let j = 0; j < posteos[i].Comentarios.length; j++){ %>
                                 <li>
-                                    <a href="/usuario/detalle/<%=posteos[i].comentarios[j].userId%>"><%=posteos[i].comentarios[j].usuarioU.nombre_usuario%></a>
-                                    <p><%=posteos[i].comentarios[j].comentario%></p>
+                                    <a href="/usuario/detalle/<%=posteos[i].Comentarios[j].usuario_id%>"><%=posteos[i].Comentarios[j].Usuario.nombreDeUsuario%></a>
+                                    <p><%=posteos[i].Comentarios[j].comentario%></p>
                                 </li>
                                 <% } %>
                                 <a href="">Ver más...</a>

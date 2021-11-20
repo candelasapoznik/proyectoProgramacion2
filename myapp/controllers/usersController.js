@@ -1,6 +1,5 @@
 let db = require('../database/models')
 let bcrypt = require('bcryptjs');
-const Usuario = require('../database/models/Usuario');
 
 const userController={
     register: function (req,res){
@@ -28,6 +27,9 @@ const userController={
     },
     login: function(req,res){
         res.render('login')
+    },
+    processLogin: (req,res)=> {
+            
     },
     processLogin: function (req, res) {
         let errors={}

@@ -13,7 +13,7 @@ router.post('/registracion', usersController.registerPost);
 //PARA LOGIN 
 router.get('/login', usersController.login);
 //PARA CHEQUEAR QUE EL USUARIO ESTA OK, SINO SERÍA POR GET
-router.post('/login', usersController.processlogin);
+router.post('/login', usersController.processLogin);
 //PARA LOGOUT
 router.post('/logout', usersController.logout);
 //PARA DETALLE USUARIO

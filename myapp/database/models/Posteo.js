@@ -9,11 +9,14 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
             },
-        idUsuarioQueLoCreo: {
-            type: dataTypes.INTEGER
-            },
+            image:{
+                type: dataTypes.STRING
+                 },
         caption: {
             type: dataTypes.STRING
+            },
+        usuario_id: {
+            type: dataTypes.INTEGER
             },
         createdAt:{
             type: dataTypes.DATE,
@@ -21,9 +24,6 @@ module.exports = function(sequelize, dataTypes){
         updatedAt:{
             type: dataTypes.DATE,
             },
-        imagen:{
-            type: dataTypes.STRING
-            }
         }
 
     let config = {
@@ -35,12 +35,12 @@ module.exports = function(sequelize, dataTypes){
     const Posteo = sequelize.define(alias, cols, config); 
     Posteo.associate = function(models){
         Posteo.belongsTo(models.Usuario,{
-            as: 'Usuarios',
-            foreignKey: 'idUsuarioQueLoCreo'
+            as: 'Usuario',
+            foreignKey: 'usuario_id'
         }),
         Posteo.hasMany(models.Comentario,{
             as: 'Comentarios',
-            foreignKey: 'idUsuarioQueLoCreo'
+            foreignKey: 'idPost'
         })
     }
     return Posteo; 

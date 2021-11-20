@@ -19,15 +19,15 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING,
         },
         edad: {
-            type: dataTypes.INTERGER
+            type: dataTypes.INTEGER
             },
         email: {
             type: dataTypes.STRING
             },
-        documento: {
-            type: dataTypes.INTERGER
+        document: {
+            type: dataTypes.INTEGER
             },
-        contrasena: {
+        password: {
             type: dataTypes.STRING
             },
         fechaDeNacimiento: {
@@ -51,13 +51,13 @@ module.exports = function(sequelize, dataTypes){
     }
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = (models) => {
-        Usuario.hasMany(models.posteo, {
+        Usuario.hasMany(models.Posteo, {
             as: 'Posteos',
-            foreignKey: 'idUsuarioQueLoCreo'
+            foreignKey: 'usuario_id'
         });
-        Usuario.hasMany(models.comentario,{
+        Usuario.hasMany(models.Comentario,{
             as: 'Comentarios',
-            foreignKey: 'idUsuarioQueLoCreo'
+            foreignKey: 'usuario_id'
         })
     }
 return Usuario; 
