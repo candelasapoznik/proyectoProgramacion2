@@ -20,12 +20,18 @@ router.post('/logout', usersController.logout);
 router.get('/detalleUsuario/id/:id', usersController.detail);
 //PARA MI PERFIL
 router.get('/miPerfil/:id', usersController.profile);
-//PARA EDITAR PERFIL
-router.post('/editarMiPerfil/:id', usersController.editProfile);
+//PARA EDITAR PERFIL GET
+router.get('/editarMiPerfil/:id', usersController.editProfile);
+//PARA EDITAR MI PERFIL POST
+router.post('/editarMiPerfil/:id', usersController.updateProfile);
 //PARA SEGUIR
 router.get('/seguir/:id', usersController.follow);
+//Creo la ruta de seguir usuario por metodo POST
+router.post('/seguir/:id', usersController.follow)
 //PARA DEJAR DE SEGUIR
 router.get('/dejarDeSeguir/:id', usersController.unfollow);
+//Creo la ruta de dejar de seguir usuario por metodo POST
+router.post('/dejarSeguir/:id', usersController.unfollow)
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
