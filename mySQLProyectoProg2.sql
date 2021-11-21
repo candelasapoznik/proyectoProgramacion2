@@ -1,26 +1,31 @@
+DROP DATABASE IF exists proyectoprog2;
 CREATE DATABASE proyectoProg2;
 USE proyectoProg2;
 
 /* CREAR TABLA USUARIOS */
 CREATE TABLE usuarios(
 id INT PRIMARY KEY auto_increment,
-email VARCHAR(100) UNIQUE NOT NULL,
-password VARCHAR(200) NOT NULL,
-dni INT UNSIGNED,
-image VARCHAR(200) NOT NULL,
-fecha DATETIME,
 nombre VARCHAR(100),
 apellido VARCHAR(100),
-edad INT UNSIGNED
+nombreDeUsuario VARCHAR(100),
+edad INT UNSIGNED,
+email VARCHAR(100) UNIQUE NOT NULL,
+document INT UNSIGNED,
+password VARCHAR(200) NOT NULL,
+fechaDeNacimiento DATE,
+fotoDePerfil VARCHAR(200) NOT NULL,
+createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 /* CREAR TABLA POSTEOS */
 CREATE TABLE posteos(
 id INT PRIMARY KEY auto_increment,
 image VARCHAR(200) NOT NULL,
-descrip VARCHAR(200),
-fecha_creacion DATETIME,
+caption VARCHAR(200),
 usuario_id INT NOT NULL,
+createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
@@ -28,69 +33,69 @@ FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 CREATE TABLE comentarios(
 id INT PRIMARY KEY auto_increment,
 comentario VARCHAR(500) NOT NULL,
-fecha_creacion DATETIME,
 usuario_id INT NOT NULL,
-post_id INT NOT NULL,
-
+idPost INT NOT NULL,
+createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-FOREIGN KEY (post_id) REFERENCES posteos(id)
+FOREIGN KEY (idPost) REFERENCES posteos(id)
 );
 
 /* USUARIOS */
-INSERT INTO usuarios VALUES(default, "moxfulder@yahoo.com", "moxfulder", 73148074, "user/img/imagen1.png", "2014-01-02 11:11:11","Moxy", "Fulder", "26");
-INSERT INTO usuarios VALUES(default, "dcoppit@live.com", "dcoppitr", 82210447, "user/img/imagen2.png", "2013-04-05 14:14:41", "Damina", "Coppit", "32");
-INSERT INTO usuarios VALUES(default, "gonzalesmaria@yahoo.com.ar", "gonzalesmaria1", 44993031, "user/img/imagen3.png", "2012-02-03 17:27:41", "Maria", "Gonzales", "18");
-INSERT INTO usuarios VALUES(default, "marianorodr@hotmail.com", "mariano1234", 16745667, "user/img/imagen4.png", "2016-10-03 15:27:41","Mariano", "Rodriguez", "32");
-INSERT INTO usuarios VALUES(default, "camilasenna@hotmail.com", "camilasen12", 42993039, "user/img/imagen5.png", "2018-08-06 19:28:51", "Camila", "Senna", "18");
+INSERT INTO usuarios VALUES(default, "Moxy", "Fulder","mfulder",15,"moxfulder@yahoo.com",  73148074, "moxfulder","2018-08-06 19:28:51", "/imgenesUsuarios/foto1.jpg",default,default);
+INSERT INTO usuarios VALUES(default,  "Damina", "Coppit","dcoppit",18,"dcoppit@live.com",  82210447,"dcoppitr","2018-08-06 19:28:51", "/imgenesUsuarios/foto2.jpg",default,default);
+INSERT INTO usuarios VALUES(default, "Maria", "Gonzales","mgonzales",20,"gonzalesmaria@yahoo.com.ar", 44993031, "gonzalesmaria1","2018-08-06 19:28:51", "/imgenesUsuarios/foto3.jpg",default,default);
+INSERT INTO usuarios VALUES(default, "Mariano", "Rodriguez","mrodriguez",23,"marianorodr@hotmail.com",16745667, "mariano1234", "2018-08-06 19:28:51", "/imgenesUsuarios/foto4.jpg",default,default);
+INSERT INTO usuarios VALUES(default, "Camila", "Senna", "csenna",25,"camilasenna@hotmail.com",42993039, "camilasen12","2018-08-06 19:28:51", "/imgenesUsuarios/foto5.jpg",default,default);
 
 /* POSTEO USUARIO 1 */
-INSERT INTO posteos VALUES(default, "post/img/imagen1.png", "Desayunando con mi primito", "2021-01-02 09:11:15", 1);
-INSERT INTO posteos VALUES(default,"post/img/imagen2.png", "Vayan ya a comprar mi nuevo libro que tanto tiempo dedique", "2021-02-03 15:24:40",1);
+INSERT INTO posteos VALUES(default, "post/img/imagen1.png", "Desayunando con mi primito",1,default,default);
+INSERT INTO posteos VALUES(default,"post/img/imagen2.png", "Vayan ya a comprar mi nuevo libro que tanto tiempo dedique",1,default,default);
 
 /* POSTEO USUARIO 2 */
-INSERT INTO posteos VALUES(default, "post/img/imagen3.png", "Amaneceres en Bariloche!. Hace mucho tiempo queria conocer esta maravilla de lugar y conocer sus platos tipicos", "2021-03-04 07:34:02",2);
-INSERT INTO posteos VALUES(default, "post/img/imagen4.png", "y vos que esperas?, ya pediste nuestras nuevas hamburguesas?", "2020-12-8 22:13:56",2);
+INSERT INTO posteos VALUES(default, "post/img/imagen3.png", "Amaneceres en Bariloche!. Hace mucho tiempo queria conocer esta maravilla de lugar y conocer sus platos tipicos",2,default,default);
+INSERT INTO posteos VALUES(default, "post/img/imagen4.png", "y vos que esperas?, ya pediste nuestras nuevas hamburguesas?",2,default,default);
 
 /* POSTEO USUARIO 3 */
-INSERT INTO posteos VALUES(default, "post/img/imagen5.png", "preparando la comida junto a mi familia", "2021-03-04 07:34:02",3);
-INSERT INTO posteos VALUES(default, "post/img/imagen6.png", "cocinando para toda la comunidad", "2021-10-9 12:34:34",3);
+INSERT INTO posteos VALUES(default, "post/img/imagen5.png", "preparando la comida junto a mi familia",3,default,default);
+INSERT INTO posteos VALUES(default, "post/img/imagen6.png", "cocinando para toda la comunidad",3,default,default);
 
 /* POSTEO USUARIO 4 */
-INSERT INTO posteos VALUES(default, "post/img/imagen7.png", "plan fit para el verano, rutinas incluidas y muchas mas recetas", "2020-06-12 16:00:45",4);
-INSERT INTO posteos VALUES(default, "post/img/imagen8.png", "estudiando y siempre con ganas de algo dulce!", "2020-09-11 10:55:23",4);
+INSERT INTO posteos VALUES(default, "post/img/imagen7.png", "plan fit para el verano, rutinas incluidas y muchas mas recetas",4,default,default);
+INSERT INTO posteos VALUES(default, "post/img/imagen8.png", "estudiando y siempre con ganas de algo dulce!",4,default,default);
 
 /* POSTEO USUARIO 5 */
-INSERT INTO posteos VALUES(default, "post/img/imagen9.png", "miren las galletitas que me regalaron para mi cumpleanos", "2019-06-12 15:02:24",5);
-INSERT INTO posteos VALUES(default, "post/img/imagen10.png", "Abrimos nuevo local en San Fernando!! quien viene?", "2019-05-12 15:02:24",5);
+INSERT INTO posteos VALUES(default, "post/img/imagen9.png", "miren las galletitas que me regalaron para mi cumpleanos",5,default,default);
+INSERT INTO posteos VALUES(default, "post/img/imagen10.png", "Abrimos nuevo local en San Fernando!! quien viene?",5,default,default);
 
 
 
 /* COMENTARIOS DEL USUARIO 1 */
-INSERT INTO comentarios VALUES(default, "Que lindo!!!", "2021-01-02 10:11:14", 1, 1);
-INSERT INTO comentarios VALUES(default, "Awww que tiernos", "2021-01-02 10:27:35", 1, 1);
-INSERT INTO comentarios VALUES(default, "Cuanto cuesta?", "2021-01-02 10:31:45", 1, 2);
-INSERT INTO comentarios VALUES(default, "Ya lo compre! y estoy haciendo la lasagna, despues cuento como salio", "2021-01-02 10:33:12", 1, 2);
+INSERT INTO comentarios VALUES(default, "Que lindo!!!", 1, 1,default,default);
+INSERT INTO comentarios VALUES(default, "Awww que tiernos", 1, 1,default,default);
+INSERT INTO comentarios VALUES(default, "Cuanto cuesta?", 1, 2,default,default);
+INSERT INTO comentarios VALUES(default, "Ya lo compre! y estoy haciendo la lasagna, despues cuento como salio", 1, 2,default,default);
 
 /*  COMENTARIOS DEL USUARIO 2 */
-INSERT INTO comentarios VALUES(default, "Hermosa vista", "2021-02-03 15:24:41", 2, 3);
-INSERT INTO comentarios VALUES(default, "ojala estar ahi!", "2021-02-03 15:24:55", 2, 3);
-INSERT INTO comentarios VALUES(default, "se ven riquisimas!", "2021-02-03 16:00:48", 2, 4);
-INSERT INTO comentarios VALUES(default, "Estan buenisimas! yo las probe ayer y les encantaron a toda la familia", "2021-02-03 16:13:40", 2, 4);
+INSERT INTO comentarios VALUES(default, "Hermosa vista", 2, 3,default,default);
+INSERT INTO comentarios VALUES(default, "ojala estar ahi!", 2, 3,default,default);
+INSERT INTO comentarios VALUES(default, "se ven riquisimas!", 2, 4,default,default);
+INSERT INTO comentarios VALUES(default, "Estan buenisimas! yo las probe ayer y les encantaron a toda la familia", 2, 4,default,default);
 
 /*  COMENTARIOS DEL USUARIO 3 */
-INSERT INTO comentarios VALUES(default, "sumenme!", "2021-03-04 07:34:02", 3, 5);
-INSERT INTO comentarios VALUES(default, "que andan cocinando?", "2021-03-04 07:35:02", 3, 5);
-INSERT INTO comentarios VALUES(default, "bellos!", "2021-03-04 07:36:02", 3, 6);
-INSERT INTO comentarios VALUES(default, "cuando llevan las viandas?", "2021-03-04 07:38:22", 3, 6);
+INSERT INTO comentarios VALUES(default, "sumenme!", 3, 5,default,default);
+INSERT INTO comentarios VALUES(default, "que andan cocinando?", 3, 5,default,default);
+INSERT INTO comentarios VALUES(default, "bellos!",  3, 6,default,default);
+INSERT INTO comentarios VALUES(default, "cuando llevan las viandas?", 3, 6,default,default);
 
 /*  COMENTARIOS DEL USUARIO 4 */
-INSERT INTO comentarios VALUES(default, "a ejercitar y comer sano!", "2020-12-8 22:13:56", 4, 7);
-INSERT INTO comentarios VALUES(default, "Estan buenisimas las recetas! yo las probe ayer y les encantaron a toda la familia", "2020-12-8 22:14:56", 4, 7);
-INSERT INTO comentarios VALUES(default, "estoy igual", "2020-12-8 22:30:54", 4, 8);
-INSERT INTO comentarios VALUES(default, "cuando rendis?", "2020-12-8 22:33:13", 4, 8);
+INSERT INTO comentarios VALUES(default, "a ejercitar y comer sano!", 4, 7,default,default);
+INSERT INTO comentarios VALUES(default, "Estan buenisimas las recetas! yo las probe ayer y les encantaron a toda la familia", 4, 7,default,default);
+INSERT INTO comentarios VALUES(default, "estoy igual", 4, 8,default,default);
+INSERT INTO comentarios VALUES(default, "cuando rendis?",  4, 8,default,default);
 
 /*  COMENTARIOS DEL USUARIO 5 */
-INSERT INTO comentarios VALUES(default, "feliz cumple!!", "2021-03-04 07:34:02", 5, 9);
-INSERT INTO comentarios VALUES(default, "felicidades!", "2021-03-04 07:38:13", 5, 9);
-INSERT INTO comentarios VALUES(default, "que horarios esta abierto?", "2021-03-04 07:39:43", 5, 10);
-INSERT INTO comentarios VALUES(default, "lindos colores!", "2021-03-04 07:39:59", 5, 10);
+INSERT INTO comentarios VALUES(default, "feliz cumple!!", 5, 9,default,default);
+INSERT INTO comentarios VALUES(default, "felicidades!",5, 9,default,default);
+INSERT INTO comentarios VALUES(default, "que horarios esta abierto?",5, 10,default,default);
+INSERT INTO comentarios VALUES(default, "lindos colores!", 5, 10,default,default);
