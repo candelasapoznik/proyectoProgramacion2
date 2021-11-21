@@ -2,20 +2,15 @@
 <html>
 	    <%- include('./partials/head') %> 
     <body>
-        <% if (usuarioLogueado== true) { %>
+        <% if (usuario) { %>
             <%- include('./partials/headerLogueado') %> 
         <% } else{ %>
-            <%- include('./partials/headerDeslgueado') %>
+            <%- include('./partials/headerDeslogueado') %>
         <% } %>
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h1 class="subtitulo">Login</h1>
-                   
-                  
-                    <label for="">Recordame</label> <input type="checkbox" name="recordame">
-                    <button>Enviar</button>
-
                 <form class= "userLogin" action="/users/login" method="POST">
                     <% if(locals.error != undefined){ %> 
                         <p><%= error.message %> </p>
@@ -26,7 +21,7 @@
                     </div>
                     <div>
                         <label for="contrasena">Contraseña:</label>
-                        <input type="text" placeholder="Contrasena" name="contrasena" id="contrasena">
+                        <input type="password" placeholder="Contrasena" name="password" id="contrasena">
                     </div>
                     <div>
                         <label for="recordarme">Recordarme</label>

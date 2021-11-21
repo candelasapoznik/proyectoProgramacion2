@@ -22,15 +22,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( { secret: "Nuestro mensaje secreto", resave: false, saveUninitialized: true }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/posts', postRouter);
-
 //para que guarde el usuario en la sesion
 app.use(function(req, res, next){
   if(req.session.usuario != undefined){
     res.locals.usuario = req.session.usuario;
     return next();
+  } else{
+    res.locals.usuario=null;
   } 
   return next(); //Clave para que el proceso siga adelante.  
 })
@@ -58,6 +56,10 @@ app.use(function(req, res, next){
   }
 
 })
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/posts', postRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

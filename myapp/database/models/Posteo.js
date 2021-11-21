@@ -9,7 +9,7 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
             },
-            image:{
+        image:{
                 type: dataTypes.STRING
                  },
         caption: {

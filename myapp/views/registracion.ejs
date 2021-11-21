@@ -2,12 +2,24 @@
 <html>
     <%- include('./partials/head') %> 
     <body>
-        <%- include('./partials/headerDeslogueado') %> 
+        <% if (usuario) { %>
+            <%- include('./partials/headerLogueado') %> 
+        <% } else{ %>
+            <%- include('./partials/headerDeslogueado') %>
+        <% } %>
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                     <h1 class="subtitulo">Formulario de registración</h1>
                     <form class= "userRegistracion" action="/users/registracion" method="POST">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+                        </div>
+                        <div>
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" placeholder="Apellido" name="apellido" id="apellido">
+                        </div>
                         <div>
                             <label for="nombreDeUsuario">Nombre de usuario:</label>
                             <input type="text" placeholder="Nombre De Usuario" name="nombreDeUsuario" id="nombreDeUsuario">
@@ -21,20 +33,16 @@
                             <input type="email" placeholder="Email" name="email" id="email">
                         </div>
                         <div>
+                            <label for="documento">Documento:</label>
+                            <input type="number" placeholder="Documento" name="document" id="documento">
+                        </div>
+                        <div>
                             <label for="contrasena">Contraseña:</label>
-                            <input type="text" placeholder="Contraseña" name="contrasena" id="contrasena">
+                            <input type="password" placeholder="Contraseña" name="password" id="contrasena">
                         </div>
                         <div>
                             <label for="fechaDeNacimiento">Fecha de nacimiento:</label>
                             <input type="date" placeholder="Fecha de nacimiento" name="fechaDeNacimiento" id="fechaDeNacimiento">
-                        </div>
-                        <div>
-                            <label for="createdAt">Fecha de creación:</label>
-                            <input type="date" placeholder="Fecha de creación" name="createdAt" id="createdAt">
-                        </div>
-                        <div>
-                            <label for="updatedAt">Registro actualizado:</label>
-                            <input type="date" placeholder="Registro actualizado" name="updatedAt" id="updatedAt">
                         </div>
                         <div>
                             <button type="submit">Enviar</button> 
