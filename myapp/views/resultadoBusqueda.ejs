@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials.head') %>
+    <%- include('./partials/head') %>
 <body>
     <% if (usuario) { %>
         <%- include('./partials/headerLogueado') %> 
@@ -11,31 +11,42 @@
 
     <main>
         <div class="uk-section uk-section-small">
-            <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
+            <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                
-                <h2>(Mostar resultados de busqueda)</h2>
+                <h2>Resultados de tu busqueda</h2>
+                <% if (posteos.length >0) { %>
+                    <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% for( let i=0; i<posteos.length; i++) { %> 
+                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                            <div class="info-usuario uk-flex ">
+                                <div>
+                                    <img src="<%=posteos[i].Usuario.fotoDePerfil%>" alt="foto de perfil">
+                                </div>
+                                <h4><a href="/users/detalleUsuario/id/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h4>
+                            </div>
+                            <a href="/posts/detallePost/id/<%=posteos[i].id%>" class="link-detalle">
+                                <img src="<%=posteos[i].image%> " alt="foto de perfil" class="foto-perfil">
+                                <p class="uk-text-center"><%=posteos[i].caption%></p>
+                            </a>
+                        </div>
+                        <% } %> 
+                        
+                    </div>
+                <% }else{ %>
+                    <h3>No existen resultados</h3>
+                <% } %>
 
             </div>
         </div>
     </main>
 
-    <%- include('./partials.footer') %> 
+    <%- include('./partials/footer') %> 
 
     <!-- <form action="/proyectoProgramacion2/myapp/data/posteos.js/busqueda" method="get">
         <imput type= "text" class="text" name="busqueda"></imput>
         <button>Enviar</button>
     </form> -->
-    <h1>Posteos</h1>
-    <ul>
-        <% for (let i = 0; i < posteos.lenght; i++) { %>
-            <li>
-               <a href="/posteos"><%= posteos[i].imagen%></a> 
-                <%= posteos[i].descrip%>
-                <a href="#2"><%= posteos[i].usuario_id%></a>
-
-            </li>
-         }
-    </ul>
+    
 
 </body>
 

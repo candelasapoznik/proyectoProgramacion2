@@ -1,6 +1,6 @@
 let db = require('../database/models')
 let bcrypt = require('bcryptjs')
-
+let op = db.Sequelize.Op
 // defino una variable que contiene el OL donde escribimos los métodos que se van a encargar de manejar los request.
 const postController = {
     //metodo para cada request particular 
@@ -33,8 +33,8 @@ const postController = {
         res.render('agregarPost', {})
     },
     busqueda: function (req, res) {
-        let search = req.query.search
-        posteos.findAll({
+        let search = req.query.search //imput referencia por el search 
+        db.Posteo.findAll({
                 where: [{
                     caption: {
                         [op.like]: `%${search}%`
@@ -46,18 +46,16 @@ const postController = {
                 limit: 10,
                 offset: 0,
                 include: [{
-                    association: 'usuario'
+                    association: 'Usuario'
                 }, {
-                    association: 'comentarios' //que tiene cada uno de esos posteos
+                    association: 'Comentarios' //que tiene cada uno de esos posteos
                 }]
             })
             .then(posteos => {
+                //res.send(posteos)
                 return res.render("resultadoBusqueda", {
                     posteos: posteos
                 });
-            })
-            .catch(error => {
-                return res.send(error)
             })
     },
     savePost: (req, res) => {

@@ -9,7 +9,7 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER,
             },
-           comentario: {
+        comentario: {
                 type: dataTypes.STRING
                 },
         usuario_id: {
