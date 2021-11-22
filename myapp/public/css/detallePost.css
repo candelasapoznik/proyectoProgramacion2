@@ -1,65 +1,88 @@
-section.detalle-container{
+
+.detalle-container{
     border: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
-article.detalle-post{
-    /* border-right: 1px solid lightgray; */
+.detalle-post{
+     border-right: 1px solid lightgray;    
 }
 
-article.detalle-post .imagen-post{
+.info-post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
+    height: 10%;
+    border-bottom: 1px solid lightgray;
+    padding-left: 5px;
+}
+.fotoDePerfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+}
+
+.usuarioPosteo{
+    width: 50%;
 
 }
 
 .comentarios-detalle{
     border-left: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: left;
 }
 
-.comentarios-detalle .info-post{
-    height: 10%;
-    border-bottom: 1px solid lightgray;
-    padding-left: 5px;
+.lista-comentarios{
+    padding-right: 2px;
 }
-.comentarios-detalle .info-post img{
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-.comentarios-detalle .info-post h3{
+
+.info-post h3{
     font-size: 14px;
     font-weight: bolder;
     margin: 0 0 0 8px;
-}
-.comentarios-detalle .info-post h3 a{
+}  
+
+.info-post h3 a{
     color: #ff6969;
 }
-.comentarios-detalle .lista-comentarios{
+.lista-comentarios{
     height: 75%;
     padding-left: 5px;
     border-bottom: 1px solid lightgray;
     overflow: scroll;
 }
-.comentarios-detalle .lista-comentarios::-webkit-scrollbar{
+.lista-comentarios::-webkit-scrollbar{
     display: none;
 }
-.comentarios-detalle .agregar-comentario{
+
+.agregar-comentario{
     height: 15%;
     padding-left: 5px;
 }
 
-.comentarios-detalle .lista-comentarios{
-    padding-right: 2px;
-}
-.comentarios-detalle .lista-comentarios .comentario .icono-meGusta{
+
+.icono-meGusta{
     font-weight: bolder;
 }
-.comentarios-detalle .lista-comentarios .comentario div img{
+
+.comentario div img{
     border-radius: 50%;
 }
 
-.comentarios-detalle .lista-comentarios .comentario h6{
+.comentario h6{
     font-size: 13px;
     margin-left: 2px !important;
 }
-.comentarios-detalle .lista-comentarios .comentario h6 a{
+.comentario h6 a{
     font-weight: bolder;
     font-size: 15px;
     color: black;
