@@ -15,9 +15,9 @@
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h2>Resultados de tu busqueda</h2>
                 <% if (posteos.length >0) { %>
-                    <form action="/users/search" method="get">
+                    <form action="/users/busqueda" method="get">
                         <input type="search" class="uk-search-input" placeholder="Buscar Usuario..." name="search">
-                        <button>Enviar</button>
+                        <button type="submit" class="search-form">Enviar</button>
                     </form>
                 <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
                     <% for( let i=0; i<posteos.length; i++) { %>
@@ -43,7 +43,7 @@
                 <h3>No existen resultados</h3>
                 <form action="/users/busqueda" method="get">
                     <input type="search" class="uk-search-input" placeholder="Buscar Usuario..." name="search">
-                    <button>Enviar</button>
+                    <button type="submit" class="search-form">Enviar</button>
                 </form>
                 <% } %>
             </div>

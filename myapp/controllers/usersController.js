@@ -1,6 +1,6 @@
 let db = require('../database/models')
 let bcrypt = require('bcryptjs');
-let op = db.Sequelize.Op
+let op = db.Sequelize.Op;
 
 const userController = {
     //solo se puede acceder a la página de registración si no hay un usuario logeado
@@ -63,7 +63,7 @@ const userController = {
                 }],
             })
             .then(usuario => {
-                if ((req.body.email == undefined)) {
+                if (req.body.email == undefined) {
                     errors.message = "Los datos son incorrectos";
                     errors = res.locals.errors;
                     return res.render("login")
