@@ -19,6 +19,7 @@ const userController = {
             errors.message = "El campo de email no puede estar vacio ni puede estar repetido en la base de datos";
             res.locals.error = errors;
             res.render('registracion');
+            
         }else {
             db.Usuario.create({
                 nombre: req.body.nombre,
