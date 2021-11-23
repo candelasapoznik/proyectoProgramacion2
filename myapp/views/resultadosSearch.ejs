@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
+
+    <main>
+        <% if (usuarios.length >0) { %>
+        <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+            <% for( let i=0; i<usuarios.length; i++) { %>
+            <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                <div class="info-usuario uk-flex ">
+                    <div>
+                        <img src="<%=usuarios[i].fotoDePerfil%>" alt="foto de perfil">
+                    </div>
+                    <h4><a href="/users/detalleUsuario/id/<%=usuarios[i].id%>"><%=usuarios[i].nombreDeUsuario%></a>
+                    </h4>
+                </div>
+                <a href="/posts/detallePost/id/<%=usuarios[i].id%>" class="link-detalle">
+                    <img src="<%=usuarios[i].image%> " alt="foto de perfil" class="foto-perfil">
+                </a>
+            </div>
+            <% } %>
+
+        </div>
+        <% }else{ %>
+        <h3>No existen resultados</h3>
+        <% } %>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+    <!-- <form action="/proyectoProgramacion2/myapp/data/posteos.js/busqueda" method="get">
+        <imput type= "text" class="text" name="busqueda"></imput>
+        <button>Enviar</button>
+    </form> -->
+
+
+</body>
+
+</html>

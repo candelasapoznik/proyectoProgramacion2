@@ -48,6 +48,8 @@ router.post('/seguir/:id', usersController.follow)
 router.get('/dejarDeSeguir/:id', usersController.unfollow);
 //Creo la ruta de dejar de seguir usuario por metodo POST
 router.post('/dejarSeguir/:id', usersController.unfollow)
+//buscador USUARIOS//
+router.get('/busqueda', usersController.search);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
