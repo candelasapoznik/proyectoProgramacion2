@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./partials/head') %> 
-    <body>
-        <% if (usuario) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslogueado') %>
-        <% } %>
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h2>Editar mi perfil</h2>
-                <form class= "editarPerfilForm" form action="/users/editarMiPerfil/<%= perfil.id %> " method="POST">
+                <form class="editarPerfilForm" form action="/users/editarMiPerfil/<%= perfil.id %> " method="POST">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input type="text" placeholder="Nombre" name="nombre" id="nombre" value="<%= perfil.nombre %> ">
                     </div>
                     <div>
                         <label for="apellido">Apellido:</label>
-                        <input type="text" placeholder="Apellido" name="apellido" id="apellido" value="<%= perfil.apellido %> ">
+                        <input type="text" placeholder="Apellido" name="apellido" id="apellido"
+                            value="<%= perfil.apellido %> ">
                     </div>
                     <div>
                         <label for="nombreDeUsuario">Nombre de usuario:</label>
-                        <input type="text" placeholder="Nombre De Usuario" name="nombreDeUsuario" id="nombreDeUsuario" value="<%= perfil.nombreDeUsuario %> ">
+                        <input type="text" placeholder="Nombre De Usuario" name="nombreDeUsuario" id="nombreDeUsuario"
+                            value="<%= perfil.nombreDeUsuario %> ">
                     </div>
                     <div>
                         <label for="edad">Edad:</label>
@@ -34,21 +37,23 @@
                     </div>
                     <div>
                         <label for="contrasena">Contraseña:</label>
-                        <input type="text" placeholder="Contrasena" name="contrasena" id="contrasena" value="<%= perfil.contrasena %> ">
+                        <input type="text" placeholder="Contrasena" name="contrasena" id="contrasena"
+                            value="<%= perfil.contrasena %> ">
                     </div>
                     <div>
                         <label for="fotoDePerfil">Imagen:</label>
-                        <input type="file" placeholder="Foto de perfil" name="fotoDePerfil" id="fotoDePerfil" value="<%= perfil.fotoDePerfil %> ">
+                        <input type="file" placeholder="Foto de perfil" name="fotoDePerfil" id="fotoDePerfil"
+                            value="<%= perfil.fotoDePerfil %> ">
                     </div>
                     <div>
-                        <button type="submit">Enviar</button> 
+                        <button type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
     </main>
 
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
 </body>
 
 </html>
