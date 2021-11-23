@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-	    <%- include('./partials/head') %> 
-    <body>
-        <% if (usuario) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslogueado') %>
-        <% } %>
-        <main>
-            <div class="uk-section uk-section-small">
-                <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
+    <main>
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h1 class="subtitulo">Login</h1>
-                <form class= "userLogin" action="/users/login" method="POST">
-                    <% if(locals.error != undefined){ %> 
-                        <p><%= error.message %> </p>
-                    <% } %> 
+                <form class="userLogin" action="/users/login" method="POST">
+                    <% if(locals.error != undefined){ %>
+                    <p><%= error.message %> </p>
+                    <% } %>
                     <div>
                         <label for="email">Email: </label>
                         <input type="email" placeholder="Email" name="email" id="email">
@@ -25,16 +26,16 @@
                     </div>
                     <div>
                         <label for="recordarme">Recordarme</label>
-					    <input type="checkbox" name="recordarme">
+                        <input type="checkbox" name="recordarme">
                     </div>
-                    <div> 
-                        <button type="submit">Iniciar sesión</button> 
+                    <div>
+                        <button type="submit">Iniciar sesión</button>
                     </div>
                 </form>
-                </div>
             </div>
-        </main>
-        <%- include('./partials/footer') %> 
-    </body>
-</html>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
 
+</html>

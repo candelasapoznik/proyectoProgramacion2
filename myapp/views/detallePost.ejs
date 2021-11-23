@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./partials/head') %> 
-    <body>
-        <% if (usuario) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslogueado') %>
-        <% } %>
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
     <main>
         <div class="detalle-post">
             <div class="detalle-post">
@@ -17,27 +18,37 @@
                     <article class="comentarios-detalle">
                         <div class="info-post">
                             <div class="fotoDePerfil">
-                            <img src="<%= post.Usuario.fotoDePerfil%>" alt="Foto del usuario">
+                                <img src="<%= post.Usuario.fotoDePerfil%>" alt="Foto del usuario">
                             </div>
                             <div class="usuarioPosteo">
-                            <h3><a href="/users/detalleUsuario/id/<%= post.Usuario.id %>"><%= post.Usuario.nombreDeUsuario %> </a></h3> <!--el Usuario es el alias de la asosiacion en el modelo-->
+                                <h3><a href="/users/detalleUsuario/id/<%= post.Usuario.id %>"><%= post.Usuario.nombreDeUsuario %>
+                                    </a></h3>
                             </div>
                         </div>
-                        <div class="lista-comentarios" >
+                        <div class="borrar">
+                            <form action="/posts/borrarPost/<%= post.id %> " class="agregar-comentario" method="POST">
+                                <button class="boton-agregar-comentario" type="submit">Borrar Posteo</button>
+                            </form>
+                            <a href="/posts/editarPost/<%= post.id %> ">Editar posteo</a>
+                        </div>
+                        <div class="lista-comentarios">
                             <% post.Comentarios.forEach(element => { %>
                             <div class="comentario">
                                 <div class="imagen">
-                                    <img class='imagenesPerfiles' src="<%= element.Usuario.fotoDePerfil%> " alt="Foto de usuario"> 
+                                    <img class='imagenesPerfiles' src="<%= element.Usuario.fotoDePerfil%> "
+                                        alt="Foto de usuario">
                                 </div>
-                                <h6 class="detalleusuariopost"><a href="/users/detalleUsuario"><%=element.Usuario.ombre%></a></h6>
-                                <a href="" uk-icon="icon:heart; ratio: 0.8" class="uk-width-1-4 uk-text-right icono-meGusta"><%=element.comentario%></a>
+                                <h6 class="detalleusuariopost"><a
+                                        href="/users/detalleUsuario"><%=element.Usuario.ombre%></a></h6>
+                                <a href="" uk-icon="icon:heart; ratio: 0.8"
+                                    class="uk-width-1-4 uk-text-right icono-meGusta"><%=element.comentario%></a>
                             </div>
                             <% }) %>
                         </div>
                         <div class="agregar-comentario">
                             <form action="" class="agregar-comentario">
-                              <input type="text" class="uk-input" placeholder="Agregar comentario"> 
-                              <button class="boton-agregar-comentario" type="submit">Comentar</button>
+                                <input type="text" class="uk-input" placeholder="Agregar comentario">
+                                <button class="boton-agregar-comentario" type="submit">Comentar</button>
                             </form>
                         </div>
                     </article>
@@ -46,7 +57,7 @@
         </div>
     </main>
 
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
 
 </body>
 

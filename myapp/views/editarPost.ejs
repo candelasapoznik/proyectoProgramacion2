@@ -11,15 +11,17 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-column">
-                <h1 class="subtitulo">Formulario para agregar un post</h1>
-                <form action="/posts/agregarPost" method="POST" enctype="multipart/form-data">
+                <h1 class="subtitulo">Formulario para editar un post</h1>
+                <form action="/posts/editarPost/<%= posteo.id %> " method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="imagen">Imagen:</label>
                         <input type="file" placeholder="Ingrese una imagen" name="image" id="imagen">
                     </div>
                     <div>
                         <label for="caption">Caption:</label>
-                        <input type="text" placeholder="Ingrese una caption" name="caption" id="caption">
+                        <!-- value = el valor inicial del campo al cual queremos editar  -->
+                        <input type="text" placeholder="Ingrese una caption" name="caption" id="caption"
+                            value="<%= posteo.caption %>">
                     </div>
                     <div>
                         <button type="submit">Enviar</button>
