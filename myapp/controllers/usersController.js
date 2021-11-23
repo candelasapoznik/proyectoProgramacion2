@@ -3,7 +3,7 @@ let bcrypt = require('bcryptjs');
 
 const userController = {
     register: function (req, res) {
-        if(req.session.user == undefined){
+        if(req.session.usuario == undefined){
             res.render('registracion')
         } else {
             res.redirect("/")
@@ -44,7 +44,7 @@ const userController = {
         }
     },
     login: function (req, res) {
-        if(req.session.user == undefined){
+        if(req.session.usuario == undefined){
             res.render('login')
         } else {
             res.redirect("/")
