@@ -4,7 +4,7 @@ let bcrypt = require('bcryptjs');
 const userController = {
     //solo se puede acceder a la página de registración si no hay un usuario logeado
     register: function (req, res) {
-        if(req.session.usuario == undefined){
+        if (req.session.usuario == undefined) {
             res.render('registracion')
         } else {
             res.redirect("/")
@@ -14,40 +14,41 @@ const userController = {
         let contrasenaEncriptada = bcrypt.hashSync(req.body.password, 10)
         console.log(contrasenaEncriptada)
         let errors = {}
-
         if (req.body.email == "" || req.body.email == req.session.email) {
             errors.message = "El campo de email no puede estar vacio ni puede estar repetido en la base de datos";
             res.locals.error = errors;
             res.render('registracion');
-            
-        }else {
+            if (req.body.password == "" || req.body.password.length <= 4) {
+                errors.message = "El campo de contraseña no puede estar vacio y debe tener al menos tres caracteres";
+                res.locals.error = errors;
+                res.render("registracion");
+                res.redirect('/users/registracion')
+            }
+        } else {
+            req.body.fotoDePerfil = (req.file.destination + req.file.filename).replace('./public', '');
             db.Usuario.create({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                nombreDeUsuario: req.body.nombreDeUsuario,
-                edad: req.body.edad,
-                email: req.body.email,
-                document: req.body.document,
-                password: contrasenaEncriptada,
-                fechaDeNacimiento: req.body.fechaDeNacimiento,
-            })
-            .then(Usuario => {
-                if(req.body.password == "" || req.body.password.length <= 4){
-                    errors.message = "El campo de contraseña no puede estar vacio y debe tener al menos tres caracteres";
-                    res.locals.error = errors;
-                    res.render("registracion");
-                    res.redirect('/users/registracion')
-                }
-            })
-            .catch(err => {
-                console.log(err);
-                res.send(err)
-            })
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    nombreDeUsuario: req.body.nombreDeUsuario,
+                    edad: req.body.edad,
+                    email: req.body.email,
+                    document: req.body.document,
+                    password: contrasenaEncriptada,
+                    fechaDeNacimiento: req.body.fechaDeNacimiento,
+                    fotoDePerfil: req.file.filename
+                })
+                .then(usuario => {
+                    res.redirect("/users/login");
+                })
+                .catch(error => {
+                    console.log(error);
+                    res.send(error)
+                })
         }
     },
     //solo se puede acceder a la página de login si no hay un usuario logeado
     login: function (req, res) {
-        if(req.session.usuario == undefined){
+        if (req.session.usuario == undefined) {
             res.render('login')
         } else {
             res.redirect("/")
@@ -70,14 +71,14 @@ const userController = {
                     errors = res.locals.errors;
                     return res.render("login")
                 } else {
-                        console.log('creo la session')
-                        email = req.session.email
-                        req.session.usuario=usuario
-                        if (req.body.recordame != null) {
-                            res.cookie('usuarioId', usuario.id, {
-                                maxAge: 1000 * 60 * 60
-                            })
-                            return res.redirect('/')
+                    console.log('creo la session')
+                    email = req.session.email
+                    req.session.usuario = usuario
+                    if (req.body.recordame != null) {
+                        res.cookie('usuarioId', usuario.id, {
+                            maxAge: 1000 * 60 * 60
+                        })
+                        return res.redirect('/')
                     }
                     email = req.session.email
                     if (req.body.recordame != null) {
@@ -113,7 +114,7 @@ const userController = {
             .then(usuarios => {
                 //Verifico si el usuario encontrao es seguido por el usuario en sesion
                 let loSigue = false
-                if (req.session.user){
+                if (req.session.user) {
                     for (let i = 0; i < usuarios.Seguidor.length; i++) {
                         if (req.session.user.id == usuarios.Seguidor[i].id) {
                             loSigue = true
@@ -145,47 +146,6 @@ const userController = {
             res.redirect("/users/login")
         }
     },
-    editProfile: function (req, res) {
-
-        let perfil = db.Usuario.findByPk(req.session.user.id);
-
-        let usuarios = db.Usuario.findAll()
-        //voy a necesitar recibir los datos de mi perfil pero a su vez mi formulario recibe los datos de usuarios
-        Promise.all([perfil, usuarios])
-
-            .then(([perfil, usuarios]) => {
-                res.render('editarMiPerfil', {
-                    usuarios: usuarios,
-                    perfil: perfil
-                })
-            })
-            .catch(err => {
-                console.log(err)
-                res.send(err)
-            })
-    },
-    updateProfile: function (req, res) {
-        let id = req.session.user.id
-
-        //el método update recibe dos parámetros (ambos Obj Literales): todos los campos a modificar y el where, con el param filtrado. 
-        db.Usuario.update({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                nombreDeUsuario: req.body.nombreDeUsuario,
-                edad: req.body.edad,
-                email: req.body.email,
-                contrasena: req.body.constrasena,
-                fotoDePerfil: req.body.fotoDePerfil,
-            }, {
-                where: {
-                    id: id
-                }
-            })
-            .then(usuario => {
-                res.redirect("/users/miPerfil/" + id)
-            })
-    },
-    //Crear metodo follow que permita crear un registro en la tabla intermedia
     follow: function (req, res) {
         //Valido si existe session
         if (req.session.user) {

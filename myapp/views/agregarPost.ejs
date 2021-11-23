@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./partials/head') %> 
-    <body>
-        <% if (usuario) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslogueado') %>
-        <% } %>
-        <main>
-            <div class="uk-section uk-section-small">
-                <div class="uk-container uk-container-large uk-flex uk-flex-column">
-                    <h1 class="subtitulo">Formulario para agregar un post</h1>
-                    <form action="/posts/agregarPost" method="GET">
-                        <div>
-                            <label for="imagen">Imagen:</label>
-                            <input type="file" placeholder="Ingrese una imagen" name="imagen" id="imagen">
-                        </div>
-                        <div>
-                            <label for="caption">Caption:</label>
-                            <input type="text" placeholder="Ingrese una caption" name="caption" id="caption">
-                        </div>
-                        <div>
-                            <button type="submit">Enviar</button> 
-                        </div>
-                    </form>
-    
-                </div>
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
+    <main>
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex uk-flex-column">
+                <h1 class="subtitulo">Formulario para agregar un post</h1>
+                <form action="/posts/agregarPost" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="imagen">Imagen:</label>
+                        <input type="file" placeholder="Ingrese una imagen" name="image" id="imagen">
+                    </div>
+                    <div>
+                        <label for="caption">Caption:</label>
+                        <input type="text" placeholder="Ingrese una caption" name="caption" id="caption">
+                    </div>
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+
             </div>
-        </main>
-        <%- include('./partials/footer') %> 
-    </body>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
 </html>

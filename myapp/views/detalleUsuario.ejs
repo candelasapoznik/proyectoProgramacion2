@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./partials/head') %> 
-    <body>
-        <% if (usuario) { %>
-            <%- include('./partials/headerLogueado') %> 
-        <% } else{ %>
-            <%- include('./partials/headerDeslogueado') %>
-        <% } %> 
+<%- include('./partials/head') %>
+
+<body>
+    <% if (usuario) { %>
+    <%- include('./partials/headerLogueado') %>
+    <% } else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img class='imagenUsuario'src="<%= usuarios.fotoDePerfil %>"  alt="foto de perfil" class="foto-perfil">
+                        <img class='imagenUsuario' src="/imagenesUsuarios/<%= usuarios.fotoDePerfil %>"
+                            alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h3 class="uk-margin-remove"><%= usuarios.nombre%> <%= usuarios.apellido%></h3>
                             <!-- Valido si el usuario con session sigue al usuario del perfil visto -->
                             <%  if( loSigue) { %>
-                                <form action="/users/dejarDeSeguir/<%= usuarios.id %> " method="POST">
-                                    <button>Dejar de seguir</button>
-                                </form>
+                            <form action="/users/dejarDeSeguir/<%= usuarios.id %> " method="POST">
+                                <button>Dejar de seguir</button>
+                            </form>
                             <%  } else { %>
-                                <form action="/users/seguir/<%= usuarios.id %> " method="POST">
-                                    <button>Seguir</button>
-                                </form>
-                            <%  } %> 
+                            <form action="/users/seguir/<%= usuarios.id %> " method="POST">
+                                <button>Seguir</button>
+                            </form>
+                            <%  } %>
 
                         </div>
- 
+
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li><%= posteos.length %>  posts</li>
+                                <li><%= posteos.length %> posts</li>
                                 <li><%= usuarios.Seguidor.length %> seguidores</li>
                                 <li><%= usuarios.Seguido.length %> seguidos</li>
                             </ul>
                         </div>
                     </div>
-               </section>
-               <section class="muro uk-flex uk-flex-middle uk-flex-center">
+                </section>
+                <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
-                        <% for( let i=0; i<posteos.length; i++) { %> 
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                        <% for( let i=0; i<posteos.length; i++) { %>
+                        <div
+                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                             <a href="/posts/detallePost/id/<%=posteos[i].id%>" class="link-detalle">
                                 <img src="<%=posteos[i].image%> " alt="foto de perfil" class="foto-perfil">
                                 <p class="uk-text-center"><%=posteos[i].caption%></p>
                             </a>
                         </div>
-                        <% } %> 
-                        
+                        <% } %>
+
                     </div>
-               </section>
+                </section>
             </div>
         </div>
     </main>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
 </body>
 
 </html>
