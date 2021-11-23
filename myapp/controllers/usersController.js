@@ -3,7 +3,11 @@ let bcrypt = require('bcryptjs');
 
 const userController = {
     register: function (req, res) {
-        res.render('registracion')
+        if(req.session.user == undefined){
+            res.render('registracion')
+        } else {
+            res.redirect("/")
+        }
     },
     registerPost: function (req, res) {
         let contrasenaEncriptada = bcrypt.hashSync(req.body.password, 10)
@@ -40,10 +44,11 @@ const userController = {
         }
     },
     login: function (req, res) {
-        res.render('login')
-    },
-    processLogin: (req, res) => {
-
+        if(req.session.user == undefined){
+            res.render('login')
+        } else {
+            res.redirect("/")
+        }
     },
     processLogin: function (req, res) {
         let errors = {}
