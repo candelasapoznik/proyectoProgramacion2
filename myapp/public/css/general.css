@@ -15,3 +15,7 @@ a{
 .subtitle{
     font-family: 'Courier New', Courier, monospace
 }
+.error {
+    color: red;
+    background-color: black;
+  }
