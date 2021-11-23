@@ -2,6 +2,7 @@ let db = require('../database/models')
 let bcrypt = require('bcryptjs');
 
 const userController = {
+    //solo se puede acceder a la página de registración si no hay un usuario logeado
     register: function (req, res) {
         if(req.session.usuario == undefined){
             res.render('registracion')
@@ -43,6 +44,7 @@ const userController = {
             })
         }
     },
+    //solo se puede acceder a la página de login si no hay un usuario logeado
     login: function (req, res) {
         if(req.session.usuario == undefined){
             res.render('login')
