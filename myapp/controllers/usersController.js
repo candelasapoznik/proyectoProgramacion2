@@ -29,6 +29,7 @@ const userController = {
                 document: req.body.document,
                 password: contrasenaEncriptada,
                 fechaDeNacimiento: req.body.fechaDeNacimiento,
+                fotoDePerfil: req.file.filename
             })
             .then(Usuario => {
                 if(req.body.password == "" || req.body.password.length <= 4){
