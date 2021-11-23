@@ -17,8 +17,8 @@
                     </article>
                     <article class="comentarios-detalle">
                         <div class="info-post">
-                            <div class="fotoDePerfil">
-                                <img src="<%= post.Usuario.fotoDePerfil%>" alt="Foto del usuario">
+                            <div>
+                                <img class="fotoDePerfil" src="<%= post.Usuario.fotoDePerfil%>" alt="Foto del usuario">
                             </div>
                             <div class="usuarioPosteo">
                                 <h3><a href="/users/detalleUsuario/id/<%= post.Usuario.id %>"><%= post.Usuario.nombreDeUsuario %>
@@ -40,7 +40,7 @@
                                 </div>
                                 <h6 class="detalleusuariopost"><a
                                         href="/users/detalleUsuario"><%=element.Usuario.ombre%></a></h6>
-                                <a href="" uk-icon="icon:heart; ratio: 0.8"
+                                <a class= "comentarioA" href="" uk-icon="icon:heart; ratio: 0.8"
                                     class="uk-width-1-4 uk-text-right icono-meGusta"><%=element.comentario%></a>
                             </div>
                             <% }) %>

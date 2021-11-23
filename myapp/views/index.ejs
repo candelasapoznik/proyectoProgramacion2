@@ -16,7 +16,7 @@
                             <div>
                                 <img src="<%=posteos[i].Usuario.fotoDePerfil%>" alt="foto de perfil">
                             </div>
-                            <h4><a href="/users/detalleUsuario/id/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h4>
+                            <h4><a class= "nombreDeUsuario" href="/users/detalleUsuario/id/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h4>
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
                             <a href="/posts/detallePost/id/<%=posteos[i].id%>">
@@ -32,7 +32,7 @@
                             </ul>
                             <div class="post-pie uk-flex">
                                 <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/id/<%=posteos[i].Usuario.id%>"><%=posteos[i].Usuario.nombreDeUsuario%></a></h5>
-                                <p class="uk-width-5-6"><%=posteos[i].caption%></p>
+                                <p class="uk-width-5-6"><%=posteos[i].descrip%></p>
                             </div>
                         </div>
                         <div class="post-comentarios">

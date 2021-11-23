@@ -1,5 +1,6 @@
 let db = require('../database/models')
 let bcrypt = require('bcryptjs');
+let op = db.Sequelize.Op;
 
 const userController = {
     //solo se puede acceder a la página de registración si no hay un usuario logeado
@@ -62,7 +63,7 @@ const userController = {
                 }],
             })
             .then(usuario => {
-                if ((req.body.email == undefined)) {
+                if (req.body.email == undefined) {
                     errors.message = "Los datos son incorrectos";
                     errors = res.locals.errors;
                     return res.render("login")
@@ -199,6 +200,30 @@ const userController = {
                 res.send(user)
             })
 
+    },
+    search: function (req, res) {
+        let search = req.query.search //imput referencia por el search 
+        db.Usuario.findAll({
+                where: [{
+                    'nombreDeUsuario': {
+                        [op.like]: `%${search}%`
+                    }
+                }],
+                order: [
+                    ['nombreDeUsuario', 'DESC'],
+                ],
+                limit: 10,
+                include: [{
+                    all: true,
+                    nested: true
+                }],
+            })
+            .then(usuario => {
+                //res.send(usuario)
+                return res.render("resultadosSearch", {
+                    usuarios: usuario
+                });
+            })
     }
 };
 
