@@ -12,6 +12,9 @@
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                     <h1 class="subtitulo">Formulario de registración</h1>
                     <form class= "userRegistracion" action="/users/registracion" method="POST">
+                        <% if(locals.error != undefined) {%>
+                            <p class="error"><%= error.message %></p>
+                        <% } %>  
                         <div>
                             <label for="nombre">Nombre:</label>
                             <input type="text" placeholder="Nombre" name="nombre" id="nombre">

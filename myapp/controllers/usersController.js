@@ -8,7 +8,14 @@ const userController = {
     registerPost: function (req, res) {
         let contrasenaEncriptada = bcrypt.hashSync(req.body.password, 10)
         console.log(contrasenaEncriptada)
-        db.Usuario.create({
+        let errors = {}
+
+        if (req.body.email == "" || req.body.email == req.session.email) {
+            errors.message = "El campo de email no puede estar vacio ni puede estar repetido en la base de datos";
+            res.locals.error = errors;
+            res.render('registracion');
+        }else {
+            db.Usuario.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 nombreDeUsuario: req.body.nombreDeUsuario,
@@ -19,12 +26,18 @@ const userController = {
                 fechaDeNacimiento: req.body.fechaDeNacimiento,
             })
             .then(Usuario => {
-                res.redirect('/users/login')
+                if(req.body.password == "" || req.body.password.length <= 4){
+                    errors.message = "El campo de contraseña no puede estar vacio y debe tener al menos tres caracteres";
+                    res.locals.error = errors;
+                    res.render("registracion");
+                    res.redirect('/users/registracion')
+                }
             })
             .catch(err => {
                 console.log(err);
                 res.send(err)
             })
+        }
     },
     login: function (req, res) {
         res.render('login')
