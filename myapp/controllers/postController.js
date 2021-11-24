@@ -63,7 +63,7 @@ const postController = {
     savePost: (req, res) => {
         //lo opuesto es !, si no exite o es falso
         if (!req.body.caption || !req.file) {
-            errors.message = "El campo de contraseña no puede estar vacio y debe tener al menos tres caracteres";
+            errors.message = "El campo de caption no puede estar vacio y debe tener al menos tres caracteres";
             res.locals.error = errors;
             return res.render("agregarPost");
         }
