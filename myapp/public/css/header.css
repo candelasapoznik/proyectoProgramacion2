@@ -34,6 +34,7 @@ header a:hover{
 .logo a{
     font-family: 'Fjalla One', sans-serif;
     color: white;
+    font-size: 30px;
 }
 .logo a:hover {
     text-decoration: none;
@@ -44,9 +45,10 @@ header ul{
     padding: 0;
     list-style: none;
 }
-header div.uk-navbar-center ul li{
+header div.uk-navbar-center ul li a{
     padding: 0 10px;
     border-right: 1px solid white;
+    text-decoration: none;
 }
 header .uk-navbar-right a{
     margin-right: 15px;
