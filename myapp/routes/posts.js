@@ -35,7 +35,7 @@ router.post("/borrarPost/:id", postController.borrarPost);
 //EDITAR POST
 router.get("/editarPost/:id", postController.editarPost);
 router.post("/editarPost/:id", upload.single("image"), postController.updatePost);
-router.post('/comentar', postController.comentar);
+router.post('/comentar/:id', postController.comentar);
 
 //buscador//
 router.get('/busqueda', postController.busqueda);

@@ -32,7 +32,7 @@
                             <form action="/posts/borrarPost/<%= post.id %> " class="agregar-comentario" method="POST">
                                 <button class="boton-agregar-comentario" type="submit">Borrar Posteo</button>
                             </form>
-                            <form action="/posts/editarPost/<%= post.id %> " class="agregar-comentario" method="POST">
+                            <form action="/posts/editarPost/<%= post.id %> " class="agregar-comentario" method="GET">
                                 <button class="boton-agregar-comentario" type="submit">Editar Posteo</button>
                             </form>
                         </div>
@@ -51,8 +51,8 @@
                             <% }) %>
                         </div>
                         <div class="agregar-comentario">
-                            <form action="" class="agregar-comentario">
-                                <input type="text" class="uk-input" placeholder="Agregar comentario">
+                            <form action="/posts/comentar/<%= post.id %> " method="POST" class="agregar-comentario">
+                                <input name="comentario" type="text" class="uk-input" placeholder="Agregar comentario">
                                 <button class="boton-agregar-comentario" type="submit">Comentar</button>
                             </form>
                         </div>
