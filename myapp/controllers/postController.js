@@ -30,7 +30,7 @@ const postController = {
             })
     },
     busqueda: function (req, res) {
-        let search = req.query.search //imput referencia por el search 
+        let search = req.query.search //imput referencia por el search en el indexhtml 
         db.Posteo.findAll({
                 where: [{
                     caption: {
