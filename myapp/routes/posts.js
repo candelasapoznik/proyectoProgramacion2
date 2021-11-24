@@ -29,7 +29,7 @@ const upload = multer({
 router.get('/detallePost/id/:id', postController.detailPost); //luego de los dos puntos le pongo el valor id que es lo que viaja por url
 //AGREGAR POST
 router.get('/agregarPost', postController.agregarPost);
-router.post('/agregarPost', upload.single("fotoDePerfil"), postController.savePost)
+router.post('/agregarPost', upload.single("image"), postController.savePost)
 //BORRAR POST
 router.post("/borrarPost/:id", postController.borrarPost);
 //EDITAR POST
