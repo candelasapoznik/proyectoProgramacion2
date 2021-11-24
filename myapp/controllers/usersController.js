@@ -63,7 +63,8 @@ const userController = {
                 }],
             })
             .then(usuario => {
-                if (req.body.email == undefined) {
+                console.log(usuario)
+                if (!usuario) {
                     errors.message = "Los datos son incorrectos";
                     errors = res.locals.errors;
                     return res.render("login")
@@ -77,13 +78,6 @@ const userController = {
                     req.session.usuario = usuario
                     if (req.body.recordame != null) {
                         res.cookie('usuarioId', usuario.id, {
-                            maxAge: 1000 * 60 * 60
-                        })
-                        return res.redirect('/')
-                    }
-                    email = req.session.email
-                    if (req.body.recordame != null) {
-                        res.cookie('usuarioId', user.id, {
                             maxAge: 1000 * 60 * 60
                         })
                     }
@@ -205,7 +199,7 @@ const userController = {
         let search = req.query.search //imput referencia por el search 
         db.Usuario.findAll({
                 where: [{
-                    'nombreDeUsuario': {
+                    nombreDeUsuario: {
                         [op.like]: `%${search}%`
                     }
                 }],
@@ -219,7 +213,6 @@ const userController = {
                 }],
             })
             .then(usuario => {
-                //res.send(usuario)
                 return res.render("resultadosSearch", {
                     usuarios: usuario
                 });
