@@ -95,11 +95,14 @@ const postController = {
     editarPost: (req, res) => {
         db.Posteo.findByPk(req.params.id)
         .then(posteo =>{
+            console.log(posteo)
             if(!req.session.usuario || req.session.usuario.id!=posteo.usuario_id){
                 res.redirect("/")
             }
             res.render("editarPost", {posteo: posteo})       
-        })
+        }).catch(error => {
+            return res.render(error);
+          })
 
     },
     updatePost: (req, res) => {
@@ -138,7 +141,18 @@ const postController = {
         }       
     },
     comentar: (req, res) => {
-
+        if(!req.session.usuario){
+            res.redirect('/users/login')
+        }
+        db.Comentario.create({
+            comentario: req.body.comentario,
+            usuario_id: req.session.usuario.id,
+            idPost: req.params.id
+        })
+        .then(comentario=>{
+            //req.params.id para agrrar el id que pase por parametro
+            res.redirect('/posts/detallePost/id/' + req.params.id)
+        })
     },
 };
 

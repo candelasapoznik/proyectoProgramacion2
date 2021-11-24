@@ -21,15 +21,20 @@
                                 <img class="fotoDePerfil" src="<%= post.Usuario.fotoDePerfil%>" alt="Foto del usuario">
                             </div>
                             <div class="usuarioPosteo">
-                                <h3><a href="/users/detalleUsuario/id/<%= post.Usuario.id %>"><%= post.Usuario.nombreDeUsuario %>
+                                <h3><a class= "nombreUsuario" href="/users/detalleUsuario/id/<%= post.Usuario.id %>"><%= post.Usuario.nombreDeUsuario %>
                                     </a></h3>
                             </div>
+                        </div>
+                        <div>
+                            <h3 class="caption"><%= post.caption%> </h3>
                         </div>
                         <div class="borrar">
                             <form action="/posts/borrarPost/<%= post.id %> " class="agregar-comentario" method="POST">
                                 <button class="boton-agregar-comentario" type="submit">Borrar Posteo</button>
                             </form>
-                            <a href="/posts/editarPost/<%= post.id %> ">Editar posteo</a>
+                            <form action="/posts/editarPost/<%= post.id %> " class="agregar-comentario" method="GET">
+                                <button class="boton-agregar-comentario" type="submit">Editar Posteo</button>
+                            </form>
                         </div>
                         <div class="lista-comentarios">
                             <% post.Comentarios.forEach(element => { %>
@@ -39,15 +44,15 @@
                                         alt="Foto de usuario">
                                 </div>
                                 <h6 class="detalleusuariopost"><a
-                                        href="/users/detalleUsuario"><%=element.Usuario.ombre%></a></h6>
-                                <a class= "comentarioA" href="" uk-icon="icon:heart; ratio: 0.8"
-                                    class="uk-width-1-4 uk-text-right icono-meGusta"><%=element.comentario%></a>
+                                        href="/users/detalleUsuario"><%=element.Usuario.nombreDeUsuario%></a></h6>
+                                <h6 class= "comentarioA" href="" uk-icon="icon:heart; ratio: 0.8"
+                                    class="uk-width-1-4 uk-text-right icono-meGusta"><%=element.comentario%></h6>
                             </div>
                             <% }) %>
                         </div>
                         <div class="agregar-comentario">
-                            <form action="" class="agregar-comentario">
-                                <input type="text" class="uk-input" placeholder="Agregar comentario">
+                            <form action="/posts/comentar/<%= post.id %> " method="POST" class="agregar-comentario">
+                                <input name="comentario" type="text" class="uk-input" placeholder="Agregar comentario">
                                 <button class="boton-agregar-comentario" type="submit">Comentar</button>
                             </form>
                         </div>

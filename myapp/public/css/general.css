@@ -7,7 +7,10 @@ main{
 }
 a{
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: bolder;
 }
 .title{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

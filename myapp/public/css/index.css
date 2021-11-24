@@ -77,3 +77,12 @@ article.post div.post-comentarios ul li p{
 .comentarioA{
 font-size: large;
 }
+.caption {
+    padding-left: 10px;
+    font-size: 18px;
+}
+.verMas{
+    color: black;
+    font-weight: bold;
+    text-decoration:underline;
+}
