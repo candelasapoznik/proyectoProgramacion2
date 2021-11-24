@@ -28,12 +28,6 @@ const postController = {
             return console.log(error)
         })
     },
-    agregarPost: function (req, res, next) {
-        if (!req.session.usuario) {
-            res.redirect("/users/login");
-        }
-        res.render('agregarPost', {})
-    },
     busqueda: function (req, res) {
         let search = req.query.search //imput referencia por el search 
         db.Posteo.findAll({
@@ -59,6 +53,12 @@ const postController = {
                     posteos: posteos
                 });
             })
+    },
+    agregarPost: function (req, res, next) {
+        if (!req.session.usuario) {
+            res.redirect("/users/login");
+        }
+        res.render('agregarPost', {})
     },
     savePost: (req, res) => {
         //lo opuesto es !, si no exite o es falso
