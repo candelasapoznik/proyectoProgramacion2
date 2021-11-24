@@ -50,8 +50,8 @@ const postController = {
             })
             .then(posteos => {
                 //res.send(posteos)
-                return res.render("resultadoBusqueda", {
-                    posteos: posteos
+                return res.render("resultadoBusqueda", { //se vea adentro de la vista
+                    posteos: posteos //como lo voy a nombrar en las vistas
                 });
             })
     },

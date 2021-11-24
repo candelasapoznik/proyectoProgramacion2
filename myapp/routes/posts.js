@@ -42,3 +42,4 @@ router.get('/busqueda', postController.busqueda);
 
 //EXPORTO EL MÓDULO PROPIO
 module.exports = router;
+//

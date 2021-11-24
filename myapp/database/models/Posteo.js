@@ -28,7 +28,7 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         timestamps: true, //Si la tabla tiene los campos created_at y updated_at
-        underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase. 
+        underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase. 
         tableName: "Posteos"
     }
 
