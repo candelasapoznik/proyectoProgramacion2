@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)) //views
   }
 });
 
@@ -34,7 +34,7 @@ router.post('/agregarPost', upload.single("image"), postController.savePost)
 router.post("/borrarPost/:id", postController.borrarPost);
 //EDITAR POST
 router.get("/editarPost/:id", postController.editarPost);
-router.post("/editarPost/:id", upload.single("image"), postController.updatePost);
+router.post("/editarPost/:id", upload.single("image"), postController.updatePost); //imput enviamos al controlador upda
 router.post('/comentar/:id', postController.comentar);
 
 //buscador//

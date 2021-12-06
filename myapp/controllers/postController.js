@@ -71,8 +71,9 @@ const postController = {
         req.body.image = (req.file.destination + req.file.filename).replace('./public', '');
       db.Posteo.create({
           //req.body que es un objeto lo divide entre las propiedades
-        ...req.body,
-        usuario_id: req.session.usuario.id
+        image: req.body.image,
+        caption: req.body.caption,
+        usuario_id: req.session.usuario_id
       }).then(post => {
         res.redirect('/');
       }).catch(error => {
@@ -145,7 +146,7 @@ const postController = {
             res.redirect('/users/login')
         }
         db.Comentario.create({
-            comentario: req.body.comentario,
+            comentario: req.body.comentario, //Para obtener los datos del formulario en el controlador usaremos la propiedad  body dentro del objeto request: req.body que es un objeto literal. 
             usuario_id: req.session.usuario.id,
             idPost: req.params.id
         })
